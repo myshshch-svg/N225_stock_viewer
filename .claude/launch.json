@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dev",
+      "runtimeExecutable": "/Users/shoichi_miyoshi/Documents/N225_stock_viewer/node_modules/.bin/vite",
+      "runtimeArgs": ["--port", "5173", "--strictPort"],
+      "port": 5173
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+.app {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 8px 12px 40px;
+}
+
+.header h1 {
+  font-size: 20px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.periods {
+  display: flex;
+  gap: 4px;
+}
+
+.periods button {
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.periods button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.toolbar input {
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--card-bg);
+  color: var(--text);
+  font-size: 13px;
+  width: 200px;
+}
+
+.updated {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.sector-head {
+  font-size: 14px;
+  margin: 14px 2px 6px;
+  padding: 3px 8px;
+  background: var(--card-bg);
+  border-left: 4px solid var(--accent);
+  border-radius: 2px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 8px;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 6px;
+  min-height: 20px;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 13px;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-price {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.card-change {
+  margin-left: 4px;
+  font-size: 11px;
+}
+
+.card-chart {
+  height: 160px;
+  margin: 4px 0;
+}
+
+.card-chart canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.card-error {
+  color: var(--muted);
+  font-size: 12px;
+  display: block;
+  text-align: center;
+  padding-top: 60px;
+}
+
+.card-links {
+  display: flex;
+  gap: 10px;
+  font-size: 11px;
+  align-items: baseline;
+}
+
+.card-sector {
+  margin-left: auto;
+  color: var(--muted);
+}
+
+.footer {
+  margin-top: 30px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+}
