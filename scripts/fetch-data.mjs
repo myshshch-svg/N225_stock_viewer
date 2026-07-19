@@ -88,16 +88,27 @@ async function getYahooAuth() {
   return { cookie, crumb };
 }
 
-// 次回決算発表日。取得できなければnull（新興銘柄や取得失敗時など）を返す。
-async function fetchEarningsDate(symbol, auth) {
-  const url = `https://query1.finance.yahoo.com/v10/finance/quoteSummary/${encodeURIComponent(symbol)}?modules=calendarEvents&crumb=${encodeURIComponent(auth.crumb)}`;
+// 次回決算発表日・PER・PBR・配当利回りをまとめて取得（quoteSummaryは1リクエストで複数モジュール指定可）
+async function fetchQuoteSummary(symbol, auth) {
+  const modules = "calendarEvents,summaryDetail,defaultKeyStatistics";
+  const url = `https://query1.finance.yahoo.com/v10/finance/quoteSummary/${encodeURIComponent(symbol)}?modules=${modules}&crumb=${encodeURIComponent(auth.crumb)}`;
   const res = await fetch(url, { headers: { "User-Agent": "Mozilla/5.0", Cookie: auth.cookie } });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const json = await res.json();
-  const earnings = json.quoteSummary?.result?.[0]?.calendarEvents?.earnings;
-  const dates = earnings?.earningsDate;
-  if (!dates?.length) return null;
-  return { date: dates[0].fmt, estimate: !!earnings.isEarningsDateEstimate };
+  const result = json.quoteSummary?.result?.[0];
+  const cal = result?.calendarEvents?.earnings;
+  const dates = cal?.earningsDate;
+  const earnings = dates?.length ? { date: dates[0].fmt, estimate: !!cal.isEarningsDateEstimate } : null;
+
+  const sd = result?.summaryDetail ?? {};
+  const ks = result?.defaultKeyStatistics ?? {};
+  const fundamentals = {
+    per: sd.trailingPE?.raw ?? null,
+    pbr: ks.priceToBook?.raw ?? null,
+    dividendYield: sd.dividendYield?.raw != null ? sd.dividendYield.raw * 100 : null,
+  };
+
+  return { earnings, fundamentals };
 }
 
 const yahooAuth = await getYahooAuth();
@@ -105,6 +116,7 @@ const yahooAuth = await getYahooAuth();
 const failed = [];
 const signals = {};
 const earnings = {};
+const fundamentals = {};
 let done = 0;
 for (const s of stocks) {
   let ok = false;
@@ -123,10 +135,13 @@ for (const s of stocks) {
     }
   }
   try {
-    earnings[s.code] = await fetchEarningsDate(`${s.code}.T`, yahooAuth);
+    const qs = await fetchQuoteSummary(`${s.code}.T`, yahooAuth);
+    earnings[s.code] = qs.earnings;
+    fundamentals[s.code] = qs.fundamentals;
   } catch (e) {
     earnings[s.code] = null;
-    console.error(`EARNINGS FAILED ${s.code} ${s.name}: ${e.message}`);
+    fundamentals[s.code] = null;
+    console.error(`QUOTESUMMARY FAILED ${s.code} ${s.name}: ${e.message}`);
   }
   done++;
   if (done % 25 === 0) console.log(`${done}/${stocks.length}`);
@@ -163,6 +178,7 @@ writeFileSync(
 );
 writeFileSync(join(outDir, "signals.json"), JSON.stringify(signals));
 writeFileSync(join(outDir, "earnings.json"), JSON.stringify(earnings));
+writeFileSync(join(outDir, "fundamentals.json"), JSON.stringify(fundamentals));
 
 console.log(`done: ${stocks.length - failed.length} ok, ${failed.length} failed`);
 // 失敗が多すぎる場合はワークフローを失敗させ、前回のデプロイを維持する

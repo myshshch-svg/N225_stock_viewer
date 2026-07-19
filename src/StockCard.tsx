@@ -13,6 +13,11 @@ export interface Earnings {
   date: string;
   estimate: boolean;
 }
+export interface Fundamentals {
+  per: number | null;
+  pbr: number | null;
+  dividendYield: number | null;
+}
 
 interface Props {
   stock: Stock;
@@ -21,11 +26,12 @@ interface Props {
   showStop: boolean;
   signal: CrossSignal;
   earnings: Earnings | null;
+  fundamentals: Fundamentals | null;
 }
 
 const EARNINGS_SOON_DAYS = 30; // 数ヶ月保有で気にすべき「もうすぐ決算」のしきい値
 
-export default function StockCard({ stock, days, showMa, showStop, signal, earnings }: Props) {
+export default function StockCard({ stock, days, showMa, showStop, signal, earnings, fundamentals }: Props) {
   const cardRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [data, setData] = useState<StockData | null>(null);
@@ -128,6 +134,13 @@ export default function StockCard({ stock, days, showMa, showStop, signal, earni
       {showStop && stop && (
         <div className="stop-info" style={{ color: STOP_COLOR }} title="ATR(14日)ベースのシャンデリア・エグジット（トレーリングストップ目安）">
           損切り目安 {formatPrice(stop.stop)} ({stop.pct.toFixed(1)}%)
+        </div>
+      )}
+      {fundamentals && (fundamentals.per != null || fundamentals.pbr != null || fundamentals.dividendYield != null) && (
+        <div className="fundamentals-info" title="PER・PBR・配当利回り（実績ベース）">
+          {fundamentals.per != null && <span>PER {fundamentals.per.toFixed(1)}</span>}
+          {fundamentals.pbr != null && <span>PBR {fundamentals.pbr.toFixed(2)}</span>}
+          {fundamentals.dividendYield != null && <span>利回り{fundamentals.dividendYield.toFixed(2)}%</span>}
         </div>
       )}
       <div className="card-chart">

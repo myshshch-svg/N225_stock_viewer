@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import StockCard from "./StockCard";
 import IndexCard from "./IndexCard";
-import type { Stock, Earnings } from "./StockCard";
+import type { Stock, Earnings, Fundamentals } from "./StockCard";
 import { MA_SHORT_COLOR, MA_LONG_COLOR, MA_SHORT_PERIOD, MA_LONG_PERIOD, STOP_COLOR } from "./chart";
 import stocksJson from "./n225.json";
 import "./App.css";
@@ -45,6 +45,7 @@ export default function App() {
   const [filter, setFilter] = useState("");
   const [signals, setSignals] = useState<Record<string, CrossSignal>>({});
   const [earnings, setEarnings] = useState<Record<string, Earnings | null>>({});
+  const [fundamentals, setFundamentals] = useState<Record<string, Fundamentals | null>>({});
   const [crossFilter, setCrossFilter] = useState<CrossFilter>("all");
 
   useEffect(() => {
@@ -59,6 +60,10 @@ export default function App() {
     fetch(`${import.meta.env.BASE_URL}data/earnings.json`)
       .then((r) => (r.ok ? r.json() : {}))
       .then(setEarnings)
+      .catch(() => {});
+    fetch(`${import.meta.env.BASE_URL}data/fundamentals.json`)
+      .then((r) => (r.ok ? r.json() : {}))
+      .then(setFundamentals)
       .catch(() => {});
   }, []);
 
@@ -173,6 +178,7 @@ export default function App() {
                 showStop={showStop}
                 signal={signals[s.code] ?? null}
                 earnings={earnings[s.code] ?? null}
+                fundamentals={fundamentals[s.code] ?? null}
               />
             ))}
           </div>

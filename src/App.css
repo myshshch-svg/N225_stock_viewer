@@ -225,6 +225,14 @@
   margin-top: 2px;
 }
 
+.fundamentals-info {
+  display: flex;
+  gap: 8px;
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
 .card-chart {
   height: 190px;
   margin: 4px 0;
