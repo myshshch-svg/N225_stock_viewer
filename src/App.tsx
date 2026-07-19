@@ -1,11 +1,18 @@
 import { useEffect, useMemo, useState } from "react";
 import StockCard from "./StockCard";
+import IndexCard from "./IndexCard";
 import type { Stock } from "./StockCard";
 import { MA_SHORT_COLOR, MA_LONG_COLOR, MA_SHORT_PERIOD, MA_LONG_PERIOD } from "./chart";
 import stocksJson from "./n225.json";
 import "./App.css";
 
 const stocks = stocksJson as Stock[];
+
+const INDICES = [
+  { code: "n225", name: "日経平均" },
+  { code: "sp500", name: "S&P500" },
+  { code: "usdjpy", name: "ドル円" },
+];
 
 const PERIODS = [
   { label: "1ヶ月", days: 22 },
@@ -126,6 +133,14 @@ export default function App() {
           )}
         </div>
       </header>
+      <section>
+        <h2 className="sector-head">市場指標</h2>
+        <div className="grid index-grid">
+          {INDICES.map((idx) => (
+            <IndexCard key={idx.code} code={idx.code} name={idx.name} days={days} showMa={showMa} />
+          ))}
+        </div>
+      </section>
       {sections.map(([sector, list]) => (
         <section key={sector}>
           <h2 className="sector-head">{sector}</h2>

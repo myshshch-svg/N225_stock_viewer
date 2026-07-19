@@ -43,8 +43,8 @@ function getCrossSignal(c) {
   return diffLast > 0 ? "golden" : "dead";
 }
 
-async function fetchOne(code) {
-  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${code}.T?range=5y&interval=1d`;
+async function fetchOne(code, symbol) {
+  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?range=5y&interval=1d`;
   const res = await fetch(url, { headers: { "User-Agent": "Mozilla/5.0" } });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const json = await res.json();
@@ -66,6 +66,13 @@ async function fetchOne(code) {
   return { code, updated: new Date().toISOString().slice(0, 10), t, o, h, l, c, v };
 }
 
+// ページ上部に表示する市場指標（銘柄一覧とは別枠、業種なし・クロス判定なし）
+const INDICES = [
+  { code: "n225", symbol: "^N225", name: "日経平均" },
+  { code: "sp500", symbol: "^GSPC", name: "S&P500" },
+  { code: "usdjpy", symbol: "USDJPY=X", name: "ドル円" },
+];
+
 const failed = [];
 const signals = {};
 let done = 0;
@@ -74,7 +81,7 @@ for (const s of stocks) {
   for (let attempt = 0; attempt < 3 && !ok; attempt++) {
     try {
       if (attempt > 0) await sleep(2000 * attempt);
-      const data = await fetchOne(s.code);
+      const data = await fetchOne(s.code, `${s.code}.T`);
       writeFileSync(join(outDir, `${s.code}.json`), JSON.stringify(data));
       signals[s.code] = getCrossSignal(data.c);
       ok = true;
@@ -90,12 +97,32 @@ for (const s of stocks) {
   await sleep(250);
 }
 
+const indexFailed = [];
+for (const idx of INDICES) {
+  let ok = false;
+  for (let attempt = 0; attempt < 3 && !ok; attempt++) {
+    try {
+      if (attempt > 0) await sleep(2000 * attempt);
+      const data = await fetchOne(idx.code, idx.symbol);
+      writeFileSync(join(outDir, `${idx.code}.json`), JSON.stringify(data));
+      ok = true;
+    } catch (e) {
+      if (attempt === 2) {
+        indexFailed.push(idx.code);
+        console.error(`FAILED ${idx.code} ${idx.name}: ${e.message}`);
+      }
+    }
+  }
+  await sleep(250);
+}
+
 writeFileSync(
   join(outDir, "meta.json"),
   JSON.stringify({
     updated: new Date().toISOString(),
     count: stocks.length - failed.length,
     failed,
+    indexFailed,
   })
 );
 writeFileSync(join(outDir, "signals.json"), JSON.stringify(signals));
