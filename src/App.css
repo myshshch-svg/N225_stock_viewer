@@ -55,6 +55,32 @@
   border-color: #e8a33d;
 }
 
+.ma-legend {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.ma-legend.dim {
+  opacity: 0.4;
+}
+
+.ma-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.ma-legend-swatch {
+  display: inline-block;
+  width: 14px;
+  height: 3px;
+  border-radius: 2px;
+}
+
 .cross-filter {
   padding-left: 10px;
   border-left: 1px solid var(--border);

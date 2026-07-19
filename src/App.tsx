@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import StockCard from "./StockCard";
 import type { Stock } from "./StockCard";
+import { MA_SHORT_COLOR, MA_LONG_COLOR, MA_SHORT_PERIOD, MA_LONG_PERIOD } from "./chart";
 import stocksJson from "./n225.json";
 import "./App.css";
 
@@ -90,6 +91,16 @@ export default function App() {
           >
             移動平均線
           </button>
+          <div className={"ma-legend" + (showMa ? "" : " dim")}>
+            <span className="ma-legend-item">
+              <span className="ma-legend-swatch" style={{ background: MA_SHORT_COLOR }} />
+              {MA_SHORT_PERIOD}日
+            </span>
+            <span className="ma-legend-item">
+              <span className="ma-legend-swatch" style={{ background: MA_LONG_COLOR }} />
+              {MA_LONG_PERIOD}日
+            </span>
+          </div>
           <div className="periods cross-filter">
             {CROSS_FILTERS.map((f) => (
               <button
@@ -132,8 +143,7 @@ export default function App() {
         </section>
       ))}
       <footer className="footer">
-        データ: Yahoo Finance（日足・終値ベース） / 銘柄リストは手動更新 /
-        オレンジ線:50日移動平均・紫線:200日移動平均
+        データ: Yahoo Finance（日足・終値ベース） / 銘柄リストは手動更新
       </footer>
     </div>
   );

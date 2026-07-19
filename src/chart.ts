@@ -11,8 +11,8 @@ export interface StockData {
 
 export const UP_COLOR = "#d6484f";
 export const DOWN_COLOR = "#3b6fc4";
-const MA_SHORT_COLOR = "#f2a900";
-const MA_LONG_COLOR = "#8e6bcf";
+export const MA_SHORT_COLOR = "#f2a900";
+export const MA_LONG_COLOR = "#8e6bcf";
 
 // 数ヶ月単位の売買を想定し、ゴールデンクロス/デッドクロスの定番組み合わせ（50日線・200日線）を採用。
 // scripts/fetch-data.mjs のクロス判定と揃えること。
