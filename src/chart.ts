@@ -13,11 +13,17 @@ export const UP_COLOR = "#d6484f";
 export const DOWN_COLOR = "#3b6fc4";
 export const MA_SHORT_COLOR = "#f2a900";
 export const MA_LONG_COLOR = "#8e6bcf";
+export const STOP_COLOR = "#2dd4bf";
 
 // 数ヶ月単位の売買を想定し、ゴールデンクロス/デッドクロスの定番組み合わせ（50日線・200日線）を採用。
 // scripts/fetch-data.mjs のクロス判定と揃えること。
 export const MA_SHORT_PERIOD = 50;
 export const MA_LONG_PERIOD = 200;
+
+// シャンデリア・エグジット（ATRベースのトレーリングストップ）。トレンドフォローの定番設定。
+export const ATR_PERIOD = 14;
+export const CHANDELIER_PERIOD = 22;
+export const CHANDELIER_MULT = 3;
 
 const WEEK52_DAYS = 252; // 週5営業日 x 52週
 
@@ -31,6 +37,42 @@ function sma(values: number[], period: number): (number | null)[] {
     if (i >= period - 1) out[i] = sum / period;
   }
   return out;
+}
+
+// 直近period日間の最大値（境界では利用可能な範囲内で計算する）
+function rollingMax(values: number[], period: number): number[] {
+  const out: number[] = new Array(values.length).fill(0);
+  for (let i = 0; i < values.length; i++) {
+    const from = Math.max(0, i - period + 1);
+    let m = -Infinity;
+    for (let j = from; j <= i; j++) m = Math.max(m, values[j]);
+    out[i] = m;
+  }
+  return out;
+}
+
+// ATR（真の値幅の単純移動平均）
+function atr(h: number[], l: number[], c: number[], period: number): (number | null)[] {
+  const tr = h.map((_, i) =>
+    i === 0 ? h[i] - l[i] : Math.max(h[i] - l[i], Math.abs(h[i] - c[i - 1]), Math.abs(l[i] - c[i - 1]))
+  );
+  return sma(tr, period);
+}
+
+// シャンデリア・エグジット = 直近CHANDELIER_PERIOD日の高値 - ATR_PERIOD日ATR x CHANDELIER_MULT
+function computeChandelierStop(data: StockData): (number | null)[] {
+  const atrArr = atr(data.h, data.l, data.c, ATR_PERIOD);
+  const maxH = rollingMax(data.h, CHANDELIER_PERIOD);
+  return atrArr.map((a, i) => (a == null ? null : maxH[i] - CHANDELIER_MULT * a));
+}
+
+// カード表示用: 直近のATR損切りラインと現在値からの乖離率
+export function getLatestStop(data: StockData): { stop: number; pct: number } | null {
+  const series = computeChandelierStop(data);
+  const stop = series[series.length - 1];
+  const last = data.c[data.c.length - 1];
+  if (stop == null || last == null) return null;
+  return { stop, pct: ((stop - last) / last) * 100 };
 }
 
 // 直近52週（営業日ベース）の高値・安値。表示期間の選択に関わらず全履歴の末尾から計算する。
@@ -48,9 +90,10 @@ export function drawChart(
   canvas: HTMLCanvasElement,
   data: StockData,
   days: number,
-  options: { showMa?: boolean } = {}
+  options: { showMa?: boolean; showStop?: boolean } = {}
 ): void {
   const showMa = options.showMa ?? true;
+  const showStop = options.showStop ?? false;
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
 
@@ -66,6 +109,7 @@ export function drawChart(
   const start = data.c.length - n;
   const maShort = sma(data.c, MA_SHORT_PERIOD);
   const maLong = sma(data.c, MA_LONG_PERIOD);
+  const stopSeries = showStop ? computeChandelierStop(data) : null;
 
   const highs = data.h.slice(start);
   const lows = data.l.slice(start);
@@ -83,6 +127,12 @@ export function drawChart(
         max = Math.max(max, b);
         min = Math.min(min, b);
       }
+    }
+  }
+  if (stopSeries) {
+    for (let i = start; i < data.c.length; i++) {
+      const s = stopSeries[i];
+      if (s != null) min = Math.min(min, s);
     }
   }
   const pad = (max - min) * 0.05 || max * 0.01;
@@ -167,6 +217,13 @@ export function drawChart(
   if (showMa) {
     drawMaLine(ctx, maShort, start, n, left, step, y, MA_SHORT_COLOR);
     drawMaLine(ctx, maLong, start, n, left, step, y, MA_LONG_COLOR);
+  }
+
+  // ATR損切りライン（シャンデリア・エグジット、破線）
+  if (stopSeries) {
+    ctx.setLineDash([4, 3]);
+    drawMaLine(ctx, stopSeries, start, n, left, step, y, STOP_COLOR);
+    ctx.setLineDash([]);
   }
 
   // 出来高パネル

@@ -81,6 +81,14 @@
   border-radius: 2px;
 }
 
+.ma-legend-swatch.dashed {
+  width: 14px;
+  height: 0;
+  background: none;
+  border-top: 2px dashed;
+  border-radius: 0;
+}
+
 .cross-filter {
   padding-left: 10px;
   border-left: 1px solid var(--border);
@@ -210,6 +218,11 @@
   background: var(--text);
   border: 1px solid var(--card-bg);
   transform: translate(-50%, -50%);
+}
+
+.stop-info {
+  font-size: 10px;
+  margin-top: 2px;
 }
 
 .card-chart {

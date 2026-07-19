@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { drawChart, formatPrice, getWeek52Range, UP_COLOR, DOWN_COLOR } from "./chart";
+import { drawChart, formatPrice, getWeek52Range, getLatestStop, UP_COLOR, DOWN_COLOR, STOP_COLOR } from "./chart";
 import type { StockData } from "./chart";
 
 export interface Stock {
@@ -18,13 +18,14 @@ interface Props {
   stock: Stock;
   days: number;
   showMa: boolean;
+  showStop: boolean;
   signal: CrossSignal;
   earnings: Earnings | null;
 }
 
 const EARNINGS_SOON_DAYS = 30; // 数ヶ月保有で気にすべき「もうすぐ決算」のしきい値
 
-export default function StockCard({ stock, days, showMa, signal, earnings }: Props) {
+export default function StockCard({ stock, days, showMa, showStop, signal, earnings }: Props) {
   const cardRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [data, setData] = useState<StockData | null>(null);
@@ -57,8 +58,8 @@ export default function StockCard({ stock, days, showMa, signal, earnings }: Pro
   }, [visible, stock.code]);
 
   useEffect(() => {
-    if (data && canvasRef.current) drawChart(canvasRef.current, data, days, { showMa });
-  }, [data, days, showMa]);
+    if (data && canvasRef.current) drawChart(canvasRef.current, data, days, { showMa, showStop });
+  }, [data, days, showMa, showStop]);
 
   const last = data ? data.c[data.c.length - 1] : null;
   const prev = data && data.c.length > 1 ? data.c[data.c.length - 2] : null;
@@ -73,6 +74,8 @@ export default function StockCard({ stock, days, showMa, signal, earnings }: Pro
       : null;
 
   const crossClass = signal === "golden" ? " cross-golden" : signal === "dead" ? " cross-dead" : "";
+
+  const stop = data ? getLatestStop(data) : null;
 
   const daysUntilEarnings = earnings
     ? Math.ceil((new Date(earnings.date).getTime() - Date.now()) / 86400000)
@@ -120,6 +123,11 @@ export default function StockCard({ stock, days, showMa, signal, earnings }: Pro
             <div className="range52-dot" style={{ left: `${week52Pct}%` }} />
           </div>
           <span className="range52-label">{formatPrice(week52.high)}</span>
+        </div>
+      )}
+      {showStop && stop && (
+        <div className="stop-info" style={{ color: STOP_COLOR }} title="ATR(14日)ベースのシャンデリア・エグジット（トレーリングストップ目安）">
+          損切り目安 {formatPrice(stop.stop)} ({stop.pct.toFixed(1)}%)
         </div>
       )}
       <div className="card-chart">

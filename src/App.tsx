@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import StockCard from "./StockCard";
 import IndexCard from "./IndexCard";
 import type { Stock, Earnings } from "./StockCard";
-import { MA_SHORT_COLOR, MA_LONG_COLOR, MA_SHORT_PERIOD, MA_LONG_PERIOD } from "./chart";
+import { MA_SHORT_COLOR, MA_LONG_COLOR, MA_SHORT_PERIOD, MA_LONG_PERIOD, STOP_COLOR } from "./chart";
 import stocksJson from "./n225.json";
 import "./App.css";
 
@@ -40,6 +40,7 @@ interface Meta {
 export default function App() {
   const [days, setDays] = useState(82);
   const [showMa, setShowMa] = useState(true);
+  const [showStop, setShowStop] = useState(true);
   const [meta, setMeta] = useState<Meta | null>(null);
   const [filter, setFilter] = useState("");
   const [signals, setSignals] = useState<Record<string, CrossSignal>>({});
@@ -113,6 +114,19 @@ export default function App() {
               {MA_LONG_PERIOD}日
             </span>
           </div>
+          <button
+            className={"ma-toggle" + (showStop ? " active" : "")}
+            onClick={() => setShowStop((v) => !v)}
+            title="ATR(14日)ベースのシャンデリア・エグジット（トレーリングストップ）の表示切替"
+          >
+            損切りライン
+          </button>
+          <div className={"ma-legend" + (showStop ? "" : " dim")}>
+            <span className="ma-legend-item">
+              <span className="ma-legend-swatch dashed" style={{ borderColor: STOP_COLOR }} />
+              ATR損切り
+            </span>
+          </div>
           <div className="periods cross-filter">
             {CROSS_FILTERS.map((f) => (
               <button
@@ -156,6 +170,7 @@ export default function App() {
                 stock={s}
                 days={days}
                 showMa={showMa}
+                showStop={showStop}
                 signal={signals[s.code] ?? null}
                 earnings={earnings[s.code] ?? null}
               />
