@@ -104,8 +104,41 @@
   font-size: 11px;
 }
 
+.range52 {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 3px;
+}
+
+.range52-label {
+  font-size: 10px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.range52-track {
+  position: relative;
+  flex: 1;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--down-color, #3b6fc4), var(--border), var(--up-color, #d6484f));
+  opacity: 0.5;
+}
+
+.range52-dot {
+  position: absolute;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--text);
+  border: 1px solid var(--card-bg);
+  transform: translate(-50%, -50%);
+}
+
 .card-chart {
-  height: 160px;
+  height: 190px;
   margin: 4px 0;
 }
 

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { drawCandles, formatPrice, UP_COLOR, DOWN_COLOR } from "./chart";
+import { drawChart, formatPrice, getWeek52Range, UP_COLOR, DOWN_COLOR } from "./chart";
 import type { StockData } from "./chart";
 
 export interface Stock {
@@ -46,7 +46,7 @@ export default function StockCard({ stock, days }: Props) {
   }, [visible, stock.code]);
 
   useEffect(() => {
-    if (data && canvasRef.current) drawCandles(canvasRef.current, data, days);
+    if (data && canvasRef.current) drawChart(canvasRef.current, data, days);
   }, [data, days]);
 
   const last = data ? data.c[data.c.length - 1] : null;
@@ -54,6 +54,12 @@ export default function StockCard({ stock, days }: Props) {
   const change = last != null && prev != null ? last - prev : null;
   const changePct = change != null && prev ? (change / prev) * 100 : null;
   const changeColor = change == null ? undefined : change >= 0 ? UP_COLOR : DOWN_COLOR;
+
+  const week52 = data ? getWeek52Range(data) : null;
+  const week52Pct =
+    week52 && last != null && week52.high > week52.low
+      ? Math.min(100, Math.max(0, ((last - week52.low) / (week52.high - week52.low)) * 100))
+      : null;
 
   return (
     <div className="card" ref={cardRef}>
@@ -80,6 +86,15 @@ export default function StockCard({ stock, days }: Props) {
           </span>
         )}
       </div>
+      {week52 && week52Pct != null && (
+        <div className="range52" title={`52週高値 ${formatPrice(week52.high)} / 安値 ${formatPrice(week52.low)}`}>
+          <span className="range52-label">{formatPrice(week52.low)}</span>
+          <div className="range52-track">
+            <div className="range52-dot" style={{ left: `${week52Pct}%` }} />
+          </div>
+          <span className="range52-label">{formatPrice(week52.high)}</span>
+        </div>
+      )}
       <div className="card-chart">
         {error ? (
           <span className="card-error">データ取得失敗</span>
