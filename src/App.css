@@ -238,6 +238,16 @@
   align-items: baseline;
 }
 
+.card-earnings {
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.card-earnings.soon {
+  color: #f2a900;
+  font-weight: bold;
+}
+
 .card-sector {
   margin-left: auto;
   color: var(--muted);

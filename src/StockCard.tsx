@@ -9,15 +9,22 @@ export interface Stock {
 }
 
 type CrossSignal = "golden" | "dead" | null;
+export interface Earnings {
+  date: string;
+  estimate: boolean;
+}
 
 interface Props {
   stock: Stock;
   days: number;
   showMa: boolean;
   signal: CrossSignal;
+  earnings: Earnings | null;
 }
 
-export default function StockCard({ stock, days, showMa, signal }: Props) {
+const EARNINGS_SOON_DAYS = 30; // 数ヶ月保有で気にすべき「もうすぐ決算」のしきい値
+
+export default function StockCard({ stock, days, showMa, signal, earnings }: Props) {
   const cardRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [data, setData] = useState<StockData | null>(null);
@@ -66,6 +73,14 @@ export default function StockCard({ stock, days, showMa, signal }: Props) {
       : null;
 
   const crossClass = signal === "golden" ? " cross-golden" : signal === "dead" ? " cross-dead" : "";
+
+  const daysUntilEarnings = earnings
+    ? Math.ceil((new Date(earnings.date).getTime() - Date.now()) / 86400000)
+    : null;
+  const earningsSoon = daysUntilEarnings != null && daysUntilEarnings >= 0 && daysUntilEarnings <= EARNINGS_SOON_DAYS;
+  const earningsLabel = earnings
+    ? `${Number(earnings.date.slice(5, 7))}/${Number(earnings.date.slice(8, 10))}${earnings.estimate ? "予" : ""}`
+    : null;
 
   return (
     <div className={"card" + crossClass} ref={cardRef}>
@@ -119,6 +134,14 @@ export default function StockCard({ stock, days, showMa, signal }: Props) {
         <a href={`https://kabutan.jp/stock/news?code=${stock.code}`} target="_blank" rel="noopener noreferrer">ニュース</a>
         <a href={`https://irbank.net/${stock.code}`} target="_blank" rel="noopener noreferrer">IR</a>
         <a href={`https://karauri.net/${stock.code}/`} target="_blank" rel="noopener noreferrer">空売り</a>
+        {earningsLabel && (
+          <span
+            className={"card-earnings" + (earningsSoon ? " soon" : "")}
+            title={`次回決算発表${earnings?.estimate ? "（予想日）" : ""}: ${earnings?.date}`}
+          >
+            決算{earningsLabel}
+          </span>
+        )}
         <span className="card-sector">{stock.sector}</span>
       </div>
     </div>

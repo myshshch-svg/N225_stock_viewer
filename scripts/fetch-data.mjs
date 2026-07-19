@@ -73,8 +73,38 @@ const INDICES = [
   { code: "usdjpy", symbol: "USDJPY=X", name: "ドル円" },
 ];
 
+// quoteSummary(決算日取得)にはcrumb+cookie認証が要る。chart APIと違い一度だけ取得して使い回す。
+async function getYahooAuth() {
+  const UA = "Mozilla/5.0";
+  const res1 = await fetch("https://fc.yahoo.com", { headers: { "User-Agent": UA } });
+  const cookies = res1.headers.getSetCookie
+    ? res1.headers.getSetCookie()
+    : [res1.headers.get("set-cookie")].filter(Boolean);
+  const cookie = cookies.map((c) => c.split(";")[0]).join("; ");
+  const res2 = await fetch("https://query1.finance.yahoo.com/v1/test/getcrumb", {
+    headers: { "User-Agent": UA, Cookie: cookie },
+  });
+  const crumb = await res2.text();
+  return { cookie, crumb };
+}
+
+// 次回決算発表日。取得できなければnull（新興銘柄や取得失敗時など）を返す。
+async function fetchEarningsDate(symbol, auth) {
+  const url = `https://query1.finance.yahoo.com/v10/finance/quoteSummary/${encodeURIComponent(symbol)}?modules=calendarEvents&crumb=${encodeURIComponent(auth.crumb)}`;
+  const res = await fetch(url, { headers: { "User-Agent": "Mozilla/5.0", Cookie: auth.cookie } });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const json = await res.json();
+  const earnings = json.quoteSummary?.result?.[0]?.calendarEvents?.earnings;
+  const dates = earnings?.earningsDate;
+  if (!dates?.length) return null;
+  return { date: dates[0].fmt, estimate: !!earnings.isEarningsDateEstimate };
+}
+
+const yahooAuth = await getYahooAuth();
+
 const failed = [];
 const signals = {};
+const earnings = {};
 let done = 0;
 for (const s of stocks) {
   let ok = false;
@@ -91,6 +121,12 @@ for (const s of stocks) {
         console.error(`FAILED ${s.code} ${s.name}: ${e.message}`);
       }
     }
+  }
+  try {
+    earnings[s.code] = await fetchEarningsDate(`${s.code}.T`, yahooAuth);
+  } catch (e) {
+    earnings[s.code] = null;
+    console.error(`EARNINGS FAILED ${s.code} ${s.name}: ${e.message}`);
   }
   done++;
   if (done % 25 === 0) console.log(`${done}/${stocks.length}`);
@@ -126,6 +162,7 @@ writeFileSync(
   })
 );
 writeFileSync(join(outDir, "signals.json"), JSON.stringify(signals));
+writeFileSync(join(outDir, "earnings.json"), JSON.stringify(earnings));
 
 console.log(`done: ${stocks.length - failed.length} ok, ${failed.length} failed`);
 // 失敗が多すぎる場合はワークフローを失敗させ、前回のデプロイを維持する
