@@ -88,9 +88,10 @@ async function getYahooAuth() {
   return { cookie, crumb };
 }
 
-// 次回決算発表日・PER・PBR・配当利回りをまとめて取得（quoteSummaryは1リクエストで複数モジュール指定可）
+// 次回決算発表日・PER・PBR・配当利回り・アナリスト目標株価をまとめて取得
+// （quoteSummaryは1リクエストで複数モジュール指定可）
 async function fetchQuoteSummary(symbol, auth) {
-  const modules = "calendarEvents,summaryDetail,defaultKeyStatistics";
+  const modules = "calendarEvents,summaryDetail,defaultKeyStatistics,financialData";
   const url = `https://query1.finance.yahoo.com/v10/finance/quoteSummary/${encodeURIComponent(symbol)}?modules=${modules}&crumb=${encodeURIComponent(auth.crumb)}`;
   const res = await fetch(url, { headers: { "User-Agent": "Mozilla/5.0", Cookie: auth.cookie } });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -102,10 +103,14 @@ async function fetchQuoteSummary(symbol, auth) {
 
   const sd = result?.summaryDetail ?? {};
   const ks = result?.defaultKeyStatistics ?? {};
+  const fd = result?.financialData ?? {};
   const fundamentals = {
     per: sd.trailingPE?.raw ?? null,
     pbr: ks.priceToBook?.raw ?? null,
     dividendYield: sd.dividendYield?.raw != null ? sd.dividendYield.raw * 100 : null,
+    targetMeanPrice: fd.targetMeanPrice?.raw ?? null,
+    recommendationKey: fd.recommendationKey && fd.recommendationKey !== "none" ? fd.recommendationKey : null,
+    numberOfAnalysts: fd.numberOfAnalystOpinions?.raw ?? null,
   };
 
   return { earnings, fundamentals };

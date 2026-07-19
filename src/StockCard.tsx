@@ -17,7 +17,19 @@ export interface Fundamentals {
   per: number | null;
   pbr: number | null;
   dividendYield: number | null;
+  targetMeanPrice: number | null;
+  recommendationKey: string | null;
+  numberOfAnalysts: number | null;
 }
+
+const RECOMMENDATION_LABELS: Record<string, string> = {
+  strong_buy: "強気買い",
+  buy: "買い",
+  hold: "中立",
+  underperform: "弱気",
+  sell: "売り",
+  strong_sell: "強気売り",
+};
 interface SectorAvg {
   avgPer: number | null;
   avgPbr: number | null;
@@ -87,6 +99,15 @@ export default function StockCard({ stock, days, showMa, showStop, signal, earni
   const crossClass = signal === "golden" ? " cross-golden" : signal === "dead" ? " cross-dead" : "";
 
   const stop = data ? getLatestStop(data) : null;
+
+  const targetUpside =
+    fundamentals?.targetMeanPrice != null && last != null
+      ? ((fundamentals.targetMeanPrice - last) / last) * 100
+      : null;
+  const targetColor = targetUpside == null ? undefined : targetUpside >= 0 ? UP_COLOR : DOWN_COLOR;
+  const recommendationLabel = fundamentals?.recommendationKey
+    ? (RECOMMENDATION_LABELS[fundamentals.recommendationKey] ?? fundamentals.recommendationKey)
+    : null;
 
   const daysUntilEarnings = earnings
     ? Math.ceil((new Date(earnings.date).getTime() - Date.now()) / 86400000)
@@ -160,6 +181,20 @@ export default function StockCard({ stock, days, showMa, showStop, signal, earni
             </span>
           )}
           {fundamentals.dividendYield != null && <span>利回り{fundamentals.dividendYield.toFixed(2)}%</span>}
+        </div>
+      )}
+      {fundamentals?.targetMeanPrice != null && (
+        <div
+          className="analyst-info"
+          style={{ color: targetColor }}
+          title={`アナリスト平均目標株価（${fundamentals.numberOfAnalysts ?? "?"}人予想）`}
+        >
+          目標株価 {formatPrice(fundamentals.targetMeanPrice)}
+          {targetUpside != null && (
+            <> ({targetUpside >= 0 ? "+" : ""}{targetUpside.toFixed(1)}%)</>
+          )}
+          {recommendationLabel && ` ${recommendationLabel}`}
+          {fundamentals.numberOfAnalysts != null && `(${fundamentals.numberOfAnalysts})`}
         </div>
       )}
       <div className="card-chart">
