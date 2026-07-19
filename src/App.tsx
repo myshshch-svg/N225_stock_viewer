@@ -22,6 +22,7 @@ interface Meta {
 
 export default function App() {
   const [days, setDays] = useState(82);
+  const [showMa, setShowMa] = useState(true);
   const [meta, setMeta] = useState<Meta | null>(null);
   const [filter, setFilter] = useState("");
 
@@ -62,6 +63,13 @@ export default function App() {
               </button>
             ))}
           </div>
+          <button
+            className={"ma-toggle" + (showMa ? " active" : "")}
+            onClick={() => setShowMa((v) => !v)}
+            title="25日線・75日線の表示切替"
+          >
+            移動平均線
+          </button>
           <input
             type="search"
             placeholder="コード・銘柄名で絞り込み"
@@ -80,7 +88,7 @@ export default function App() {
           <h2 className="sector-head">{sector}</h2>
           <div className="grid">
             {list.map((s) => (
-              <StockCard key={s.code} stock={s} days={days} />
+              <StockCard key={s.code} stock={s} days={days} showMa={showMa} />
             ))}
           </div>
         </section>

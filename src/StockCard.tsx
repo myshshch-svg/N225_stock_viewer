@@ -11,9 +11,10 @@ export interface Stock {
 interface Props {
   stock: Stock;
   days: number;
+  showMa: boolean;
 }
 
-export default function StockCard({ stock, days }: Props) {
+export default function StockCard({ stock, days, showMa }: Props) {
   const cardRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [data, setData] = useState<StockData | null>(null);
@@ -46,8 +47,8 @@ export default function StockCard({ stock, days }: Props) {
   }, [visible, stock.code]);
 
   useEffect(() => {
-    if (data && canvasRef.current) drawChart(canvasRef.current, data, days);
-  }, [data, days]);
+    if (data && canvasRef.current) drawChart(canvasRef.current, data, days, { showMa });
+  }, [data, days, showMa]);
 
   const last = data ? data.c[data.c.length - 1] : null;
   const prev = data && data.c.length > 1 ? data.c[data.c.length - 2] : null;

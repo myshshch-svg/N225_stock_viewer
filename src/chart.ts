@@ -42,8 +42,10 @@ export function getWeek52Range(data: StockData): { high: number; low: number } {
 export function drawChart(
   canvas: HTMLCanvasElement,
   data: StockData,
-  days: number
+  days: number,
+  options: { showMa?: boolean } = {}
 ): void {
+  const showMa = options.showMa ?? true;
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
 
@@ -64,16 +66,18 @@ export function drawChart(
   const lows = data.l.slice(start);
   let max = Math.max(...highs);
   let min = Math.min(...lows);
-  for (let i = start; i < data.c.length; i++) {
-    const a = ma25[i];
-    const b = ma75[i];
-    if (a != null) {
-      max = Math.max(max, a);
-      min = Math.min(min, a);
-    }
-    if (b != null) {
-      max = Math.max(max, b);
-      min = Math.min(min, b);
+  if (showMa) {
+    for (let i = start; i < data.c.length; i++) {
+      const a = ma25[i];
+      const b = ma75[i];
+      if (a != null) {
+        max = Math.max(max, a);
+        min = Math.min(min, a);
+      }
+      if (b != null) {
+        max = Math.max(max, b);
+        min = Math.min(min, b);
+      }
     }
   }
   const pad = (max - min) * 0.05 || max * 0.01;
@@ -155,8 +159,10 @@ export function drawChart(
   }
 
   // 移動平均線（25日・75日）
-  drawMaLine(ctx, ma25, start, n, left, step, y, MA25_COLOR);
-  drawMaLine(ctx, ma75, start, n, left, step, y, MA75_COLOR);
+  if (showMa) {
+    drawMaLine(ctx, ma25, start, n, left, step, y, MA25_COLOR);
+    drawMaLine(ctx, ma75, start, n, left, step, y, MA75_COLOR);
+  }
 
   // 出来高パネル
   const maxVol = Math.max(...data.v.slice(start, start + n), 1);
