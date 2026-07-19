@@ -84,6 +84,31 @@ export default function App() {
     return [...map.entries()];
   }, [filter, crossFilter, signals]);
 
+  // 業種平均PER/PBR（絞り込みの影響を受けないよう全225銘柄から計算）
+  const sectorAverages = useMemo(() => {
+    const sums: Record<string, { perSum: number; perN: number; pbrSum: number; pbrN: number }> = {};
+    for (const s of stocks) {
+      const f = fundamentals[s.code];
+      const bucket = (sums[s.sector] ??= { perSum: 0, perN: 0, pbrSum: 0, pbrN: 0 });
+      if (f?.per != null) {
+        bucket.perSum += f.per;
+        bucket.perN++;
+      }
+      if (f?.pbr != null) {
+        bucket.pbrSum += f.pbr;
+        bucket.pbrN++;
+      }
+    }
+    const result: Record<string, { avgPer: number | null; avgPbr: number | null }> = {};
+    for (const [sector, b] of Object.entries(sums)) {
+      result[sector] = {
+        avgPer: b.perN ? b.perSum / b.perN : null,
+        avgPbr: b.pbrN ? b.pbrSum / b.pbrN : null,
+      };
+    }
+    return result;
+  }, [fundamentals]);
+
   const totalCount = sections.reduce((n, [, list]) => n + list.length, 0);
 
   return (
@@ -179,6 +204,7 @@ export default function App() {
                 signal={signals[s.code] ?? null}
                 earnings={earnings[s.code] ?? null}
                 fundamentals={fundamentals[s.code] ?? null}
+                sectorAvg={sectorAverages[s.sector] ?? null}
               />
             ))}
           </div>

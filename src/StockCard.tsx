@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { drawChart, formatPrice, getWeek52Range, getLatestStop, UP_COLOR, DOWN_COLOR, STOP_COLOR } from "./chart";
+import { drawChart, formatPrice, getWeek52Range, getLatestStop, UP_COLOR, DOWN_COLOR, STOP_COLOR, FUNDAMENTALS_COLOR } from "./chart";
 import type { StockData } from "./chart";
 
 export interface Stock {
@@ -18,6 +18,10 @@ export interface Fundamentals {
   pbr: number | null;
   dividendYield: number | null;
 }
+interface SectorAvg {
+  avgPer: number | null;
+  avgPbr: number | null;
+}
 
 interface Props {
   stock: Stock;
@@ -27,11 +31,12 @@ interface Props {
   signal: CrossSignal;
   earnings: Earnings | null;
   fundamentals: Fundamentals | null;
+  sectorAvg: SectorAvg | null;
 }
 
 const EARNINGS_SOON_DAYS = 30; // 数ヶ月保有で気にすべき「もうすぐ決算」のしきい値
 
-export default function StockCard({ stock, days, showMa, showStop, signal, earnings, fundamentals }: Props) {
+export default function StockCard({ stock, days, showMa, showStop, signal, earnings, fundamentals, sectorAvg }: Props) {
   const cardRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [data, setData] = useState<StockData | null>(null);
@@ -137,9 +142,23 @@ export default function StockCard({ stock, days, showMa, showStop, signal, earni
         </div>
       )}
       {fundamentals && (fundamentals.per != null || fundamentals.pbr != null || fundamentals.dividendYield != null) && (
-        <div className="fundamentals-info" title="PER・PBR・配当利回り（実績ベース）">
-          {fundamentals.per != null && <span>PER {fundamentals.per.toFixed(1)}</span>}
-          {fundamentals.pbr != null && <span>PBR {fundamentals.pbr.toFixed(2)}</span>}
+        <div
+          className="fundamentals-info"
+          style={{ color: FUNDAMENTALS_COLOR }}
+          title="PER・PBR・配当利回り（実績ベース）。（）内は同業種平均"
+        >
+          {fundamentals.per != null && (
+            <span>
+              PER {fundamentals.per.toFixed(1)}
+              {sectorAvg?.avgPer != null && `(業種平均${sectorAvg.avgPer.toFixed(1)})`}
+            </span>
+          )}
+          {fundamentals.pbr != null && (
+            <span>
+              PBR {fundamentals.pbr.toFixed(2)}
+              {sectorAvg?.avgPbr != null && `(業種平均${sectorAvg.avgPbr.toFixed(2)})`}
+            </span>
+          )}
           {fundamentals.dividendYield != null && <span>利回り{fundamentals.dividendYield.toFixed(2)}%</span>}
         </div>
       )}

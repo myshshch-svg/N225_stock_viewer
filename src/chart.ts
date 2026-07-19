@@ -14,6 +14,7 @@ export const DOWN_COLOR = "#3b6fc4";
 export const MA_SHORT_COLOR = "#f2a900";
 export const MA_LONG_COLOR = "#8e6bcf";
 export const STOP_COLOR = "#2dd4bf";
+export const FUNDAMENTALS_COLOR = "#f472b6";
 
 // 数ヶ月単位の売買を想定し、ゴールデンクロス/デッドクロスの定番組み合わせ（50日線・200日線）を採用。
 // scripts/fetch-data.mjs のクロス判定と揃えること。

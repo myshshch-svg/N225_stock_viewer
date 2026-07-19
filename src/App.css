@@ -227,9 +227,9 @@
 
 .fundamentals-info {
   display: flex;
-  gap: 8px;
+  flex-wrap: wrap;
+  gap: 3px 8px;
   font-size: 10px;
-  color: var(--muted);
   margin-top: 2px;
 }
 
