@@ -65,21 +65,25 @@ export function drawCandles(
     ctx.fillText(formatPrice(price), left + plotW + 3, yy);
   }
 
-  // 月替わりの縦グリッド線と月ラベル（表示期間が長いときは偶数月のみラベル）
+  // 縦グリッド線と日付ラベル。
+  // 表示期間が長い（3年・5年）ときは月替わりだと密集しすぎるため年替わりのみに切り替える。
   ctx.textBaseline = "top";
   ctx.textAlign = "center";
+  const byYear = n > 400;
   const labelEveryOtherMonth = n > 130;
   for (let i = 1; i < n; i++) {
-    const cur = data.t[start + i].slice(5, 7);
-    const prev = data.t[start + i - 1].slice(5, 7);
+    const cur = data.t[start + i].slice(0, byYear ? 4 : 7);
+    const prev = data.t[start + i - 1].slice(0, byYear ? 4 : 7);
     if (cur !== prev) {
       const x = left + step * (i + 0.5);
       ctx.beginPath();
       ctx.moveTo(x, top);
       ctx.lineTo(x, top + plotH);
       ctx.stroke();
-      if (!labelEveryOtherMonth || Number(cur) % 2 === 0) {
-        ctx.fillText(String(Number(cur)) + "月", x, top + plotH + 3);
+      if (byYear) {
+        ctx.fillText(cur.slice(2) + "年", x, top + plotH + 3);
+      } else if (!labelEveryOtherMonth || Number(cur.slice(5, 7)) % 2 === 0) {
+        ctx.fillText(String(Number(cur.slice(5, 7))) + "月", x, top + plotH + 3);
       }
     }
   }

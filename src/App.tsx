@@ -10,6 +10,8 @@ const PERIODS = [
   { label: "1ヶ月", days: 22 },
   { label: "4ヶ月", days: 82 },
   { label: "1年", days: 260 },
+  { label: "3年", days: 780 },
+  { label: "5年", days: 1300 },
 ];
 
 interface Meta {

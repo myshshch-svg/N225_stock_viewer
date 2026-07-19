@@ -14,7 +14,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const round = (x) => (x == null ? null : Math.round(x * 100) / 100);
 
 async function fetchOne(code) {
-  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${code}.T?range=1y&interval=1d`;
+  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${code}.T?range=5y&interval=1d`;
   const res = await fetch(url, { headers: { "User-Agent": "Mozilla/5.0" } });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const json = await res.json();
