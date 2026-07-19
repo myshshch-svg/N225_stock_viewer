@@ -8,13 +8,16 @@ export interface Stock {
   sector: string;
 }
 
+type CrossSignal = "golden" | "dead" | null;
+
 interface Props {
   stock: Stock;
   days: number;
   showMa: boolean;
+  signal: CrossSignal;
 }
 
-export default function StockCard({ stock, days, showMa }: Props) {
+export default function StockCard({ stock, days, showMa, signal }: Props) {
   const cardRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [data, setData] = useState<StockData | null>(null);
@@ -62,8 +65,10 @@ export default function StockCard({ stock, days, showMa }: Props) {
       ? Math.min(100, Math.max(0, ((last - week52.low) / (week52.high - week52.low)) * 100))
       : null;
 
+  const crossClass = signal === "golden" ? " cross-golden" : signal === "dead" ? " cross-dead" : "";
+
   return (
-    <div className="card" ref={cardRef}>
+    <div className={"card" + crossClass} ref={cardRef}>
       <div className="card-head">
         <a
           className="card-title"
@@ -74,6 +79,12 @@ export default function StockCard({ stock, days, showMa }: Props) {
         >
           {stock.code} {stock.name}
         </a>
+        {signal === "golden" && (
+          <span className="cross-badge golden" title="直近15営業日以内に50日線が200日線を上抜け">GC</span>
+        )}
+        {signal === "dead" && (
+          <span className="cross-badge dead" title="直近15営業日以内に50日線が200日線を下抜け">DC</span>
+        )}
         {last != null && (
           <span className="card-price">
             {formatPrice(last)}

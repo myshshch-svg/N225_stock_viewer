@@ -11,8 +11,13 @@ export interface StockData {
 
 export const UP_COLOR = "#d6484f";
 export const DOWN_COLOR = "#3b6fc4";
-const MA25_COLOR = "#f2a900";
-const MA75_COLOR = "#8e6bcf";
+const MA_SHORT_COLOR = "#f2a900";
+const MA_LONG_COLOR = "#8e6bcf";
+
+// 数ヶ月単位の売買を想定し、ゴールデンクロス/デッドクロスの定番組み合わせ（50日線・200日線）を採用。
+// scripts/fetch-data.mjs のクロス判定と揃えること。
+export const MA_SHORT_PERIOD = 50;
+export const MA_LONG_PERIOD = 200;
 
 const WEEK52_DAYS = 252; // 週5営業日 x 52週
 
@@ -59,8 +64,8 @@ export function drawChart(
 
   const n = Math.min(days, data.c.length);
   const start = data.c.length - n;
-  const ma25 = sma(data.c, 25);
-  const ma75 = sma(data.c, 75);
+  const maShort = sma(data.c, MA_SHORT_PERIOD);
+  const maLong = sma(data.c, MA_LONG_PERIOD);
 
   const highs = data.h.slice(start);
   const lows = data.l.slice(start);
@@ -68,8 +73,8 @@ export function drawChart(
   let min = Math.min(...lows);
   if (showMa) {
     for (let i = start; i < data.c.length; i++) {
-      const a = ma25[i];
-      const b = ma75[i];
+      const a = maShort[i];
+      const b = maLong[i];
       if (a != null) {
         max = Math.max(max, a);
         min = Math.min(min, a);
@@ -158,10 +163,10 @@ export function drawChart(
     ctx.fillRect(xc - bodyW / 2, bodyTop, bodyW, bodyH);
   }
 
-  // 移動平均線（25日・75日）
+  // 移動平均線（50日・200日）
   if (showMa) {
-    drawMaLine(ctx, ma25, start, n, left, step, y, MA25_COLOR);
-    drawMaLine(ctx, ma75, start, n, left, step, y, MA75_COLOR);
+    drawMaLine(ctx, maShort, start, n, left, step, y, MA_SHORT_COLOR);
+    drawMaLine(ctx, maLong, start, n, left, step, y, MA_LONG_COLOR);
   }
 
   // 出来高パネル

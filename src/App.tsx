@@ -14,6 +14,15 @@ const PERIODS = [
   { label: "5年", days: 1300 },
 ];
 
+type CrossSignal = "golden" | "dead" | null;
+type CrossFilter = "all" | "golden" | "dead";
+
+const CROSS_FILTERS: { label: string; value: CrossFilter }[] = [
+  { label: "全て", value: "all" },
+  { label: "ゴールデンクロス", value: "golden" },
+  { label: "デッドクロス", value: "dead" },
+];
+
 interface Meta {
   updated: string;
   count: number;
@@ -25,27 +34,38 @@ export default function App() {
   const [showMa, setShowMa] = useState(true);
   const [meta, setMeta] = useState<Meta | null>(null);
   const [filter, setFilter] = useState("");
+  const [signals, setSignals] = useState<Record<string, CrossSignal>>({});
+  const [crossFilter, setCrossFilter] = useState<CrossFilter>("all");
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/meta.json`)
       .then((r) => (r.ok ? r.json() : null))
       .then(setMeta)
       .catch(() => {});
+    fetch(`${import.meta.env.BASE_URL}data/signals.json`)
+      .then((r) => (r.ok ? r.json() : {}))
+      .then(setSignals)
+      .catch(() => {});
   }, []);
 
   // 業種ごとにグループ化（元データの順序を維持）
   const sections = useMemo(() => {
     const q = filter.trim();
-    const list = q
+    let list = q
       ? stocks.filter((s) => s.code.includes(q) || s.name.includes(q))
       : stocks;
+    if (crossFilter !== "all") {
+      list = list.filter((s) => signals[s.code] === crossFilter);
+    }
     const map = new Map<string, Stock[]>();
     for (const s of list) {
       if (!map.has(s.sector)) map.set(s.sector, []);
       map.get(s.sector)!.push(s);
     }
     return [...map.entries()];
-  }, [filter]);
+  }, [filter, crossFilter, signals]);
+
+  const totalCount = sections.reduce((n, [, list]) => n + list.length, 0);
 
   return (
     <div className="app">
@@ -66,16 +86,28 @@ export default function App() {
           <button
             className={"ma-toggle" + (showMa ? " active" : "")}
             onClick={() => setShowMa((v) => !v)}
-            title="25日線・75日線の表示切替"
+            title="50日線・200日線の表示切替"
           >
             移動平均線
           </button>
+          <div className="periods cross-filter">
+            {CROSS_FILTERS.map((f) => (
+              <button
+                key={f.value}
+                className={f.value === crossFilter ? "active" : ""}
+                onClick={() => setCrossFilter(f.value)}
+              >
+                {f.label}
+              </button>
+            ))}
+          </div>
           <input
             type="search"
             placeholder="コード・銘柄名で絞り込み"
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
           />
+          {crossFilter !== "all" && <span className="updated">{totalCount}銘柄</span>}
           {meta && (
             <span className="updated">
               更新: {new Date(meta.updated).toLocaleString("ja-JP")}
@@ -88,13 +120,20 @@ export default function App() {
           <h2 className="sector-head">{sector}</h2>
           <div className="grid">
             {list.map((s) => (
-              <StockCard key={s.code} stock={s} days={days} showMa={showMa} />
+              <StockCard
+                key={s.code}
+                stock={s}
+                days={days}
+                showMa={showMa}
+                signal={signals[s.code] ?? null}
+              />
             ))}
           </div>
         </section>
       ))}
       <footer className="footer">
-        データ: Yahoo Finance（日足・終値ベース） / 銘柄リストは手動更新
+        データ: Yahoo Finance（日足・終値ベース） / 銘柄リストは手動更新 /
+        オレンジ線:50日移動平均・紫線:200日移動平均
       </footer>
     </div>
   );

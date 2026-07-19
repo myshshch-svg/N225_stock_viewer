@@ -55,6 +55,11 @@
   border-color: #e8a33d;
 }
 
+.cross-filter {
+  padding-left: 10px;
+  border-left: 1px solid var(--border);
+}
+
 .toolbar input {
   padding: 4px 8px;
   border: 1px solid var(--border);
@@ -90,6 +95,35 @@
   border: 1px solid var(--border);
   border-radius: 6px;
   padding: 6px 8px;
+}
+
+.card.cross-golden {
+  border-color: #f2a900;
+  box-shadow: 0 0 0 1px #f2a900;
+}
+
+.card.cross-dead {
+  border-color: #7a7f89;
+  box-shadow: 0 0 0 1px #7a7f89;
+}
+
+.cross-badge {
+  flex: none;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 1px 5px;
+  border-radius: 3px;
+  line-height: 1.4;
+}
+
+.cross-badge.golden {
+  background: #f2a900;
+  color: #1b1c1f;
+}
+
+.cross-badge.dead {
+  background: #7a7f89;
+  color: #fff;
 }
 
 .card-head {
