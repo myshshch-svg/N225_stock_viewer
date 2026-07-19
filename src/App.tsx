@@ -40,7 +40,7 @@ interface Meta {
 export default function App() {
   const [days, setDays] = useState(82);
   const [showMa, setShowMa] = useState(true);
-  const [showStop, setShowStop] = useState(true);
+  const [showStop, setShowStop] = useState(false);
   const [meta, setMeta] = useState<Meta | null>(null);
   const [filter, setFilter] = useState("");
   const [signals, setSignals] = useState<Record<string, CrossSignal>>({});
