@@ -8,7 +8,8 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const outDir = join(root, "public", "data");
 mkdirSync(outDir, { recursive: true });
 
-const stocks = JSON.parse(readFileSync(join(root, "src", "n225.json"), "utf8"));
+// 日経225(225銘柄)とTOPIX500(493銘柄)の統合銘柄マスタ。重複を除いた約496銘柄を対象に取得する。
+const stocks = JSON.parse(readFileSync(join(root, "src", "stocks.json"), "utf8"));
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const round = (x) => (x == null ? null : Math.round(x * 100) / 100);

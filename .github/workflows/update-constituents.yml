@@ -1,0 +1,31 @@
+name: Check index constituent changes
+
+on:
+  schedule:
+    # 毎月1日 09:00 JST (00:00 UTC) — TOPIX500/日経225の定期入れ替えを確認
+    - cron: "0 0 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/build-stocks.mjs
+      - name: Create PR if constituents changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "銘柄マスタ(stocks.json)を最新の構成銘柄で更新"
+          title: "TOPIX500/日経225 構成銘柄の定期更新"
+          body: |
+            JPX公式のTOPIXウエイトCSVを再取得し、`src/stocks.json` を再生成しました。
+            差分をレビューの上マージしてください（マージするとサイトに反映されます）。
+          branch: update-stocks-constituents
+          add-paths: src/stocks.json

@@ -6,6 +6,8 @@ export interface Stock {
   code: string;
   name: string;
   sector: string;
+  n225: boolean;
+  topix500: boolean;
 }
 
 type CrossSignal = "golden" | "dead" | null;

@@ -3,10 +3,17 @@ import StockCard from "./StockCard";
 import IndexCard from "./IndexCard";
 import type { Stock, Earnings, Fundamentals } from "./StockCard";
 import { MA_SHORT_COLOR, MA_LONG_COLOR, MA_SHORT_PERIOD, MA_LONG_PERIOD, STOP_COLOR } from "./chart";
-import stocksJson from "./n225.json";
+import stocksJson from "./stocks.json";
 import "./App.css";
 
 const stocks = stocksJson as Stock[];
+
+type IndexFilter = "n225" | "topix500";
+
+const INDEX_FILTERS: { label: string; value: IndexFilter }[] = [
+  { label: "日経225", value: "n225" },
+  { label: "TOPIX500", value: "topix500" },
+];
 
 const INDICES = [
   { code: "n225", name: "日経平均" },
@@ -47,6 +54,7 @@ export default function App() {
   const [earnings, setEarnings] = useState<Record<string, Earnings | null>>({});
   const [fundamentals, setFundamentals] = useState<Record<string, Fundamentals | null>>({});
   const [crossFilter, setCrossFilter] = useState<CrossFilter>("all");
+  const [indexFilter, setIndexFilter] = useState<IndexFilter>("n225");
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/meta.json`)
@@ -67,12 +75,18 @@ export default function App() {
       .catch(() => {});
   }, []);
 
+  // 選択中の指数（日経225 or TOPIX500）に属する銘柄のみを対象にする
+  const indexStocks = useMemo(
+    () => stocks.filter((s) => (indexFilter === "n225" ? s.n225 : s.topix500)),
+    [indexFilter]
+  );
+
   // 業種ごとにグループ化（元データの順序を維持）
   const sections = useMemo(() => {
     const q = filter.trim();
     let list = q
-      ? stocks.filter((s) => s.code.includes(q) || s.name.includes(q))
-      : stocks;
+      ? indexStocks.filter((s) => s.code.includes(q) || s.name.includes(q))
+      : indexStocks;
     if (crossFilter !== "all") {
       list = list.filter((s) => signals[s.code] === crossFilter);
     }
@@ -82,12 +96,12 @@ export default function App() {
       map.get(s.sector)!.push(s);
     }
     return [...map.entries()];
-  }, [filter, crossFilter, signals]);
+  }, [indexStocks, filter, crossFilter, signals]);
 
-  // 業種平均PER/PBR（絞り込みの影響を受けないよう全225銘柄から計算）
+  // 業種平均PER/PBR（絞り込みの影響を受けないよう選択中の指数の全銘柄から計算）
   const sectorAverages = useMemo(() => {
     const sums: Record<string, { perSum: number; perN: number; pbrSum: number; pbrN: number }> = {};
-    for (const s of stocks) {
+    for (const s of indexStocks) {
       const f = fundamentals[s.code];
       const bucket = (sums[s.sector] ??= { perSum: 0, perN: 0, pbrSum: 0, pbrN: 0 });
       if (f?.per != null) {
@@ -107,7 +121,7 @@ export default function App() {
       };
     }
     return result;
-  }, [fundamentals]);
+  }, [indexStocks, fundamentals]);
 
   const totalCount = sections.reduce((n, [, list]) => n + list.length, 0);
 
@@ -116,6 +130,17 @@ export default function App() {
       <header className="header">
         <h1>日経225 ミニチャート一覧</h1>
         <div className="toolbar">
+          <div className="periods">
+            {INDEX_FILTERS.map((f) => (
+              <button
+                key={f.value}
+                className={f.value === indexFilter ? "active" : ""}
+                onClick={() => setIndexFilter(f.value)}
+              >
+                {f.label}
+              </button>
+            ))}
+          </div>
           <div className="periods">
             {PERIODS.map((p) => (
               <button

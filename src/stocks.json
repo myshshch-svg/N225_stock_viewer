@@ -1,0 +1,3474 @@
+[
+  {
+    "code": "1332",
+    "name": "ニッスイ",
+    "sector": "水産・農林業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "1333",
+    "name": "Umios",
+    "sector": "水産・農林業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "1605",
+    "name": "INPEX",
+    "sector": "鉱業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "1414",
+    "name": "ショーボンドホールディングス",
+    "sector": "建設業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "1417",
+    "name": "ミライト・ワン",
+    "sector": "建設業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "1719",
+    "name": "安藤・間",
+    "sector": "建設業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "1721",
+    "name": "コムシスホールディングス",
+    "sector": "建設業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "1801",
+    "name": "大成建設",
+    "sector": "建設業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "1802",
+    "name": "大林組",
+    "sector": "建設業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "1803",
+    "name": "清水建設",
+    "sector": "建設業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "1808",
+    "name": "長谷工コーポレーション",
+    "sector": "建設業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "1812",
+    "name": "鹿島建設",
+    "sector": "建設業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "1820",
+    "name": "西松建設",
+    "sector": "建設業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "1860",
+    "name": "戸田建設",
+    "sector": "建設業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "1893",
+    "name": "五洋建設",
+    "sector": "建設業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "1911",
+    "name": "住友林業",
+    "sector": "建設業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "1925",
+    "name": "大和ハウス工業",
+    "sector": "建設業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "1928",
+    "name": "積水ハウス",
+    "sector": "建設業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "1942",
+    "name": "関電工",
+    "sector": "建設業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "1944",
+    "name": "きんでん",
+    "sector": "建設業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "1951",
+    "name": "エクシオグループ",
+    "sector": "建設業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "1959",
+    "name": "クラフティア",
+    "sector": "建設業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "1963",
+    "name": "日揮ホールディングス",
+    "sector": "建設業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "1969",
+    "name": "高砂熱学工業",
+    "sector": "建設業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "5076",
+    "name": "インフロニア・ホールディングス",
+    "sector": "建設業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "2002",
+    "name": "日清製粉グループ本社",
+    "sector": "食料品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "2201",
+    "name": "森永製菓",
+    "sector": "食料品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "2206",
+    "name": "江崎グリコ",
+    "sector": "食料品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "2212",
+    "name": "山崎製パン",
+    "sector": "食料品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "2222",
+    "name": "寿スピリッツ",
+    "sector": "食料品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "2229",
+    "name": "カルビー",
+    "sector": "食料品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "2264",
+    "name": "森永乳業",
+    "sector": "食料品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "2267",
+    "name": "ヤクルト本社",
+    "sector": "食料品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "2269",
+    "name": "明治ホールディングス",
+    "sector": "食料品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "2282",
+    "name": "日本ハム",
+    "sector": "食料品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "2501",
+    "name": "サッポロホールディングス",
+    "sector": "食料品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "2502",
+    "name": "アサヒグループホールディングス",
+    "sector": "食料品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "2503",
+    "name": "キリンホールディングス",
+    "sector": "食料品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "2531",
+    "name": "宝ホールディングス",
+    "sector": "食料品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "2579",
+    "name": "コカ・コーラ ボトラーズジャパンホールディングス",
+    "sector": "食料品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "2587",
+    "name": "サントリービバレッジ&フード",
+    "sector": "食料品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "2593",
+    "name": "伊藤園",
+    "sector": "食料品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "2607",
+    "name": "不二製油",
+    "sector": "食料品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "2801",
+    "name": "キッコーマン",
+    "sector": "食料品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "2802",
+    "name": "味の素",
+    "sector": "食料品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "2809",
+    "name": "キユーピー",
+    "sector": "食料品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "2810",
+    "name": "ハウス食品グループ本社",
+    "sector": "食料品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "2811",
+    "name": "カゴメ",
+    "sector": "食料品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "2871",
+    "name": "ニチレイ",
+    "sector": "食料品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "2875",
+    "name": "東洋水産",
+    "sector": "食料品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "2897",
+    "name": "日清食品ホールディングス",
+    "sector": "食料品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "2914",
+    "name": "日本たばこ産業",
+    "sector": "食料品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "3401",
+    "name": "帝人",
+    "sector": "繊維製品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "3402",
+    "name": "東レ",
+    "sector": "繊維製品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "3591",
+    "name": "ワコールホールディングス",
+    "sector": "繊維製品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8111",
+    "name": "ゴールドウイン",
+    "sector": "繊維製品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "3861",
+    "name": "王子ホールディングス",
+    "sector": "パルプ・紙",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "3941",
+    "name": "レンゴー",
+    "sector": "パルプ・紙",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "3405",
+    "name": "クラレ",
+    "sector": "化学",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "3407",
+    "name": "旭化成",
+    "sector": "化学",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4004",
+    "name": "レゾナック・ホールディングス",
+    "sector": "化学",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4005",
+    "name": "住友化学",
+    "sector": "化学",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4021",
+    "name": "日産化学",
+    "sector": "化学",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4042",
+    "name": "東ソー",
+    "sector": "化学",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4043",
+    "name": "トクヤマ",
+    "sector": "化学",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4045",
+    "name": "東亞合成",
+    "sector": "化学",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4061",
+    "name": "デンカ",
+    "sector": "化学",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4063",
+    "name": "信越化学工業",
+    "sector": "化学",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4091",
+    "name": "日本酸素ホールディングス",
+    "sector": "化学",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4114",
+    "name": "日本触媒",
+    "sector": "化学",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4118",
+    "name": "カネカ",
+    "sector": "化学",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4182",
+    "name": "三菱瓦斯化学",
+    "sector": "化学",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4183",
+    "name": "三井化学",
+    "sector": "化学",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4186",
+    "name": "東京応化工業",
+    "sector": "化学",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4188",
+    "name": "三菱ケミカルグループ",
+    "sector": "化学",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4202",
+    "name": "ダイセル",
+    "sector": "化学",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4203",
+    "name": "住友ベークライト",
+    "sector": "化学",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4204",
+    "name": "積水化学工業",
+    "sector": "化学",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4205",
+    "name": "日本ゼオン",
+    "sector": "化学",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4206",
+    "name": "アイカ工業",
+    "sector": "化学",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4208",
+    "name": "UBE",
+    "sector": "化学",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4272",
+    "name": "日本化薬",
+    "sector": "化学",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4401",
+    "name": "ADEKA",
+    "sector": "化学",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4403",
+    "name": "日油",
+    "sector": "化学",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4452",
+    "name": "花王",
+    "sector": "化学",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4612",
+    "name": "日本ペイントホールディングス",
+    "sector": "化学",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4613",
+    "name": "関西ペイント",
+    "sector": "化学",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4626",
+    "name": "太陽ホールディングス",
+    "sector": "化学",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4631",
+    "name": "DIC",
+    "sector": "化学",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4901",
+    "name": "富士フイルムホールディングス",
+    "sector": "化学",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4911",
+    "name": "資生堂",
+    "sector": "化学",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4912",
+    "name": "ライオン",
+    "sector": "化学",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4922",
+    "name": "コーセーホールディングス",
+    "sector": "化学",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4927",
+    "name": "ポーラ・オルビスホールディングス",
+    "sector": "化学",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4967",
+    "name": "小林製薬",
+    "sector": "化学",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4980",
+    "name": "デクセリアルズ",
+    "sector": "化学",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6988",
+    "name": "日東電工",
+    "sector": "化学",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7988",
+    "name": "ニフコ",
+    "sector": "化学",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8113",
+    "name": "ユニ・チャーム",
+    "sector": "化学",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4151",
+    "name": "協和キリン",
+    "sector": "医薬品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4502",
+    "name": "武田薬品工業",
+    "sector": "医薬品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4503",
+    "name": "アステラス製薬",
+    "sector": "医薬品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4506",
+    "name": "住友ファーマ",
+    "sector": "医薬品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4507",
+    "name": "塩野義製薬",
+    "sector": "医薬品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4516",
+    "name": "日本新薬",
+    "sector": "医薬品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4519",
+    "name": "中外製薬",
+    "sector": "医薬品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4523",
+    "name": "エーザイ",
+    "sector": "医薬品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4527",
+    "name": "ロート製薬",
+    "sector": "医薬品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4528",
+    "name": "小野薬品工業",
+    "sector": "医薬品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4536",
+    "name": "参天製薬",
+    "sector": "医薬品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4540",
+    "name": "ツムラ",
+    "sector": "医薬品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4568",
+    "name": "第一三共",
+    "sector": "医薬品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4578",
+    "name": "大塚ホールディングス",
+    "sector": "医薬品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4587",
+    "name": "ペプチドリーム",
+    "sector": "医薬品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4887",
+    "name": "サワイグループホールディングス",
+    "sector": "医薬品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "5019",
+    "name": "出光興産",
+    "sector": "石油・石炭製品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "5020",
+    "name": "ENEOSホールディングス",
+    "sector": "石油・石炭製品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "5021",
+    "name": "コスモエネルギーホールディングス",
+    "sector": "石油・石炭製品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "5101",
+    "name": "横浜ゴム",
+    "sector": "ゴム製品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "5105",
+    "name": "TOYO TIRE",
+    "sector": "ゴム製品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "5108",
+    "name": "ブリヂストン",
+    "sector": "ゴム製品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "5110",
+    "name": "住友ゴム工業",
+    "sector": "ゴム製品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "5201",
+    "name": "AGC",
+    "sector": "ガラス・土石製品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "5214",
+    "name": "日本電気硝子",
+    "sector": "ガラス・土石製品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "5232",
+    "name": "住友大阪セメント",
+    "sector": "ガラス・土石製品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "5233",
+    "name": "太平洋セメント",
+    "sector": "ガラス・土石製品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "5301",
+    "name": "東海カーボン",
+    "sector": "ガラス・土石製品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "5332",
+    "name": "TOTO",
+    "sector": "ガラス・土石製品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "5333",
+    "name": "NGK",
+    "sector": "ガラス・土石製品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "5334",
+    "name": "日本特殊陶業",
+    "sector": "ガラス・土石製品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "5344",
+    "name": "MARUWA",
+    "sector": "ガラス・土石製品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "5393",
+    "name": "ニチアス",
+    "sector": "ガラス・土石製品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "5401",
+    "name": "日本製鉄",
+    "sector": "鉄鋼",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "5406",
+    "name": "神戸製鋼所",
+    "sector": "鉄鋼",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "5411",
+    "name": "JFEホールディングス",
+    "sector": "鉄鋼",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "5444",
+    "name": "大和工業",
+    "sector": "鉄鋼",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "5463",
+    "name": "丸一鋼管",
+    "sector": "鉄鋼",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "5471",
+    "name": "大同特殊鋼",
+    "sector": "鉄鋼",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "5016",
+    "name": "JX金属",
+    "sector": "非鉄金属",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "5706",
+    "name": "三井金属鉱業",
+    "sector": "非鉄金属",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "5711",
+    "name": "三菱マテリアル",
+    "sector": "非鉄金属",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "5713",
+    "name": "住友金属鉱山",
+    "sector": "非鉄金属",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "5714",
+    "name": "DOWAホールディングス",
+    "sector": "非鉄金属",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "5801",
+    "name": "古河電気工業",
+    "sector": "非鉄金属",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "5802",
+    "name": "住友電気工業",
+    "sector": "非鉄金属",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "5803",
+    "name": "フジクラ",
+    "sector": "非鉄金属",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "3436",
+    "name": "SUMCO",
+    "sector": "金属製品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "5901",
+    "name": "東洋製罐グループホールディングス",
+    "sector": "金属製品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "5929",
+    "name": "三和ホールディングス",
+    "sector": "金属製品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "5938",
+    "name": "LIXIL",
+    "sector": "金属製品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "5947",
+    "name": "リンナイ",
+    "sector": "金属製品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "5991",
+    "name": "日本発條",
+    "sector": "金属製品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "5631",
+    "name": "日本製鋼所",
+    "sector": "機械",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6005",
+    "name": "三浦工業",
+    "sector": "機械",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6103",
+    "name": "オークマ",
+    "sector": "機械",
+    "n225": true,
+    "topix500": false
+  },
+  {
+    "code": "6113",
+    "name": "アマダ",
+    "sector": "機械",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6134",
+    "name": "FUJI",
+    "sector": "機械",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6136",
+    "name": "オーエスジー",
+    "sector": "機械",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6141",
+    "name": "DMG森精機",
+    "sector": "機械",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6146",
+    "name": "ディスコ",
+    "sector": "機械",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6268",
+    "name": "ナブテスコ",
+    "sector": "機械",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6269",
+    "name": "三井海洋開発",
+    "sector": "機械",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6273",
+    "name": "SMC",
+    "sector": "機械",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6301",
+    "name": "小松製作所",
+    "sector": "機械",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6302",
+    "name": "住友重機械工業",
+    "sector": "機械",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6305",
+    "name": "日立建機",
+    "sector": "機械",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6323",
+    "name": "ローツェ",
+    "sector": "機械",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6326",
+    "name": "クボタ",
+    "sector": "機械",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6361",
+    "name": "荏原製作所",
+    "sector": "機械",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6367",
+    "name": "ダイキン工業",
+    "sector": "機械",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6368",
+    "name": "オルガノ",
+    "sector": "機械",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6370",
+    "name": "栗田工業",
+    "sector": "機械",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6383",
+    "name": "ダイフク",
+    "sector": "機械",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6417",
+    "name": "SANKYO",
+    "sector": "機械",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6436",
+    "name": "アマノ",
+    "sector": "機械",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6457",
+    "name": "グローリー",
+    "sector": "機械",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6460",
+    "name": "セガサミーホールディングス",
+    "sector": "機械",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6465",
+    "name": "ホシザキ",
+    "sector": "機械",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6471",
+    "name": "日本精工",
+    "sector": "機械",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6472",
+    "name": "NTN",
+    "sector": "機械",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6473",
+    "name": "ジェイテクト",
+    "sector": "機械",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6481",
+    "name": "THK",
+    "sector": "機械",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6586",
+    "name": "マキタ",
+    "sector": "機械",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "7003",
+    "name": "三井E&S",
+    "sector": "機械",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "7004",
+    "name": "カナデビア",
+    "sector": "機械",
+    "n225": true,
+    "topix500": false
+  },
+  {
+    "code": "7011",
+    "name": "三菱重工業",
+    "sector": "機械",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7013",
+    "name": "IHI",
+    "sector": "機械",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "285A",
+    "name": "キオクシアホールディングス",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "3105",
+    "name": "日清紡ホールディングス",
+    "sector": "電気機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4062",
+    "name": "イビデン",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4902",
+    "name": "コニカミノルタ",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6448",
+    "name": "ブラザー工業",
+    "sector": "電気機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6479",
+    "name": "ミネベアミツミ",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6501",
+    "name": "日立製作所",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6503",
+    "name": "三菱電機",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6504",
+    "name": "富士電機",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6506",
+    "name": "安川電機",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6525",
+    "name": "KOKUSAI ELECTRIC",
+    "sector": "電気機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6526",
+    "name": "ソシオネクスト",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6592",
+    "name": "マブチモーター",
+    "sector": "電気機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6632",
+    "name": "JVCケンウッド",
+    "sector": "電気機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6645",
+    "name": "オムロン",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6674",
+    "name": "ジーエス・ユアサ コーポレーション",
+    "sector": "電気機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6701",
+    "name": "日本電気",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6702",
+    "name": "富士通",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6707",
+    "name": "サンケン電気",
+    "sector": "電気機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6723",
+    "name": "ルネサスエレクトロニクス",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6724",
+    "name": "セイコーエプソン",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6728",
+    "name": "アルバック",
+    "sector": "電気機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6752",
+    "name": "パナソニックホールディングス",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6753",
+    "name": "シャープ",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6754",
+    "name": "アンリツ",
+    "sector": "電気機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6758",
+    "name": "ソニーグループ",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6762",
+    "name": "TDK",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6770",
+    "name": "アルプスアルパイン",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6806",
+    "name": "ヒロセ電機",
+    "sector": "電気機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6841",
+    "name": "横河電機",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6845",
+    "name": "アズビル",
+    "sector": "電気機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6849",
+    "name": "日本光電工業",
+    "sector": "電気機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6856",
+    "name": "堀場製作所",
+    "sector": "電気機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6857",
+    "name": "アドバンテスト",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6861",
+    "name": "キーエンス",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6869",
+    "name": "シスメックス",
+    "sector": "電気機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6920",
+    "name": "レーザーテック",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6923",
+    "name": "スタンレー電気",
+    "sector": "電気機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6925",
+    "name": "ウシオ電機",
+    "sector": "電気機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6951",
+    "name": "日本電子",
+    "sector": "電気機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6952",
+    "name": "カシオ計算機",
+    "sector": "電気機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6954",
+    "name": "ファナック",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6963",
+    "name": "ローム",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6965",
+    "name": "浜松ホトニクス",
+    "sector": "電気機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "6971",
+    "name": "京セラ",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6976",
+    "name": "太陽誘電",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6981",
+    "name": "村田製作所",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7276",
+    "name": "小糸製作所",
+    "sector": "電気機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "7735",
+    "name": "SCREENホールディングス",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7751",
+    "name": "キヤノン",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7752",
+    "name": "リコー",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "8035",
+    "name": "東京エレクトロン",
+    "sector": "電気機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "3116",
+    "name": "トヨタ紡織",
+    "sector": "輸送用機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "543A",
+    "name": "ARCHION",
+    "sector": "輸送用機器",
+    "n225": true,
+    "topix500": false
+  },
+  {
+    "code": "6902",
+    "name": "デンソー",
+    "sector": "輸送用機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7012",
+    "name": "川崎重工業",
+    "sector": "輸送用機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7201",
+    "name": "日産自動車",
+    "sector": "輸送用機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7202",
+    "name": "いすゞ自動車",
+    "sector": "輸送用機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7203",
+    "name": "トヨタ自動車",
+    "sector": "輸送用機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7211",
+    "name": "三菱自動車工業",
+    "sector": "輸送用機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7240",
+    "name": "NOK",
+    "sector": "輸送用機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "7259",
+    "name": "アイシン",
+    "sector": "輸送用機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "7261",
+    "name": "マツダ",
+    "sector": "輸送用機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7267",
+    "name": "本田技研工業",
+    "sector": "輸送用機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7269",
+    "name": "スズキ",
+    "sector": "輸送用機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7270",
+    "name": "SUBARU",
+    "sector": "輸送用機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7272",
+    "name": "ヤマハ発動機",
+    "sector": "輸送用機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7282",
+    "name": "豊田合成",
+    "sector": "輸送用機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "7309",
+    "name": "シマノ",
+    "sector": "輸送用機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "7313",
+    "name": "テイ・エス テック",
+    "sector": "輸送用機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4543",
+    "name": "テルモ",
+    "sector": "精密機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7701",
+    "name": "島津製作所",
+    "sector": "精密機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "7729",
+    "name": "東京精密",
+    "sector": "精密機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "7731",
+    "name": "ニコン",
+    "sector": "精密機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7733",
+    "name": "オリンパス",
+    "sector": "精密機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7741",
+    "name": "HOYA",
+    "sector": "精密機器",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7747",
+    "name": "朝日インテック",
+    "sector": "精密機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8086",
+    "name": "ニプロ",
+    "sector": "精密機器",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "7832",
+    "name": "バンダイナムコホールディングス",
+    "sector": "その他製品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7846",
+    "name": "パイロットコーポレーション",
+    "sector": "その他製品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "7867",
+    "name": "タカラトミー",
+    "sector": "その他製品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "7911",
+    "name": "TOPPANホールディングス",
+    "sector": "その他製品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7912",
+    "name": "大日本印刷",
+    "sector": "その他製品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7936",
+    "name": "アシックス",
+    "sector": "その他製品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "7951",
+    "name": "ヤマハ",
+    "sector": "その他製品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7956",
+    "name": "ピジョン",
+    "sector": "その他製品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "7974",
+    "name": "任天堂",
+    "sector": "その他製品",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7984",
+    "name": "コクヨ",
+    "sector": "その他製品",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9501",
+    "name": "東京電力ホールディングス",
+    "sector": "電気・ガス業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9502",
+    "name": "中部電力",
+    "sector": "電気・ガス業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9503",
+    "name": "関西電力",
+    "sector": "電気・ガス業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9504",
+    "name": "中国電力",
+    "sector": "電気・ガス業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9505",
+    "name": "北陸電力",
+    "sector": "電気・ガス業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9506",
+    "name": "東北電力",
+    "sector": "電気・ガス業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9507",
+    "name": "四国電力",
+    "sector": "電気・ガス業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9508",
+    "name": "九州電力",
+    "sector": "電気・ガス業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9509",
+    "name": "北海道電力",
+    "sector": "電気・ガス業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9513",
+    "name": "電源開発",
+    "sector": "電気・ガス業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9531",
+    "name": "東京ガス",
+    "sector": "電気・ガス業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9532",
+    "name": "大阪ガス",
+    "sector": "電気・ガス業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9533",
+    "name": "東邦瓦斯",
+    "sector": "電気・ガス業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9001",
+    "name": "東武鉄道",
+    "sector": "陸運業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9003",
+    "name": "相鉄ホールディングス",
+    "sector": "陸運業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9005",
+    "name": "東急",
+    "sector": "陸運業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9006",
+    "name": "京浜急行電鉄",
+    "sector": "陸運業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9007",
+    "name": "小田急電鉄",
+    "sector": "陸運業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9008",
+    "name": "京王電鉄",
+    "sector": "陸運業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9009",
+    "name": "京成電鉄",
+    "sector": "陸運業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9020",
+    "name": "東日本旅客鉄道",
+    "sector": "陸運業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9021",
+    "name": "西日本旅客鉄道",
+    "sector": "陸運業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9022",
+    "name": "東海旅客鉄道",
+    "sector": "陸運業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9023",
+    "name": "東京地下鉄",
+    "sector": "陸運業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9024",
+    "name": "西武ホールディングス",
+    "sector": "陸運業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9031",
+    "name": "西日本鉄道",
+    "sector": "陸運業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9041",
+    "name": "近鉄グループホールディングス",
+    "sector": "陸運業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9042",
+    "name": "阪急阪神ホールディングス",
+    "sector": "陸運業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9044",
+    "name": "NANKAI",
+    "sector": "陸運業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9045",
+    "name": "京阪ホールディングス",
+    "sector": "陸運業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9048",
+    "name": "名古屋鉄道",
+    "sector": "陸運業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9064",
+    "name": "ヤマトホールディングス",
+    "sector": "陸運業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9065",
+    "name": "山九",
+    "sector": "陸運業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9069",
+    "name": "センコーグループホールディングス",
+    "sector": "陸運業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9072",
+    "name": "ニッコンホールディングス",
+    "sector": "陸運業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9076",
+    "name": "セイノーホールディングス",
+    "sector": "陸運業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9142",
+    "name": "九州旅客鉄道",
+    "sector": "陸運業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9143",
+    "name": "SGホールディングス",
+    "sector": "陸運業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9147",
+    "name": "NIPPON EXPRESSホールディングス",
+    "sector": "陸運業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9101",
+    "name": "日本郵船",
+    "sector": "海運業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9104",
+    "name": "商船三井",
+    "sector": "海運業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9107",
+    "name": "川崎汽船",
+    "sector": "海運業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9201",
+    "name": "日本航空",
+    "sector": "空運業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9202",
+    "name": "ANAホールディングス",
+    "sector": "空運業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9301",
+    "name": "三菱倉庫",
+    "sector": "倉庫・運輸関連業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9302",
+    "name": "三井倉庫ホールディングス",
+    "sector": "倉庫・運輸関連業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9364",
+    "name": "上組",
+    "sector": "倉庫・運輸関連業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "2327",
+    "name": "日鉄ソリューションズ",
+    "sector": "情報・通信業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "2432",
+    "name": "ディー・エヌ・エー",
+    "sector": "情報・通信業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "3626",
+    "name": "TIS",
+    "sector": "情報・通信業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "3635",
+    "name": "コーエーテクモホールディングス",
+    "sector": "情報・通信業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "3659",
+    "name": "ネクソン",
+    "sector": "情報・通信業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "3697",
+    "name": "SHIFT",
+    "sector": "情報・通信業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "3769",
+    "name": "GMOペイメントゲートウェイ",
+    "sector": "情報・通信業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "3774",
+    "name": "インターネットイニシアティブ",
+    "sector": "情報・通信業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "3923",
+    "name": "ラクス",
+    "sector": "情報・通信業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "3994",
+    "name": "マネーフォワード",
+    "sector": "情報・通信業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4194",
+    "name": "ビジョナル",
+    "sector": "情報・通信業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4307",
+    "name": "野村総合研究所",
+    "sector": "情報・通信業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4385",
+    "name": "メルカリ",
+    "sector": "情報・通信業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4676",
+    "name": "フジ・メディア・ホールディングス",
+    "sector": "情報・通信業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4684",
+    "name": "オービック",
+    "sector": "情報・通信業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4689",
+    "name": "LINEヤフー",
+    "sector": "情報・通信業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4704",
+    "name": "トレンドマイクロ",
+    "sector": "情報・通信業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4716",
+    "name": "日本オラクル",
+    "sector": "情報・通信業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4733",
+    "name": "オービックビジネスコンサルタント",
+    "sector": "情報・通信業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4768",
+    "name": "大塚商会",
+    "sector": "情報・通信業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8056",
+    "name": "BIPROGY",
+    "sector": "情報・通信業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9401",
+    "name": "TBSホールディングス",
+    "sector": "情報・通信業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9404",
+    "name": "日本テレビホールディングス",
+    "sector": "情報・通信業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9432",
+    "name": "NTT",
+    "sector": "情報・通信業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9433",
+    "name": "KDDI",
+    "sector": "情報・通信業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9434",
+    "name": "ソフトバンク",
+    "sector": "情報・通信業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9435",
+    "name": "光通信",
+    "sector": "情報・通信業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9449",
+    "name": "GMOインターネットグループ",
+    "sector": "情報・通信業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9468",
+    "name": "KADOKAWA",
+    "sector": "情報・通信業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9602",
+    "name": "東宝",
+    "sector": "情報・通信業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9684",
+    "name": "スクウェア・エニックス・ホールディングス",
+    "sector": "情報・通信業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9697",
+    "name": "カプコン",
+    "sector": "情報・通信業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9759",
+    "name": "NSD",
+    "sector": "情報・通信業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9766",
+    "name": "コナミグループ",
+    "sector": "情報・通信業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9984",
+    "name": "ソフトバンクグループ",
+    "sector": "情報・通信業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "2768",
+    "name": "双日",
+    "sector": "卸売業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "2784",
+    "name": "アルフレッサ ホールディングス",
+    "sector": "卸売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "3038",
+    "name": "神戸物産",
+    "sector": "卸売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "3107",
+    "name": "ダイワボウホールディングス",
+    "sector": "卸売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "3132",
+    "name": "マクニカホールディングス",
+    "sector": "卸売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "3360",
+    "name": "シップヘルスケアホールディングス",
+    "sector": "卸売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "7458",
+    "name": "第一興商",
+    "sector": "卸売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "7459",
+    "name": "メディパルホールディングス",
+    "sector": "卸売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "7476",
+    "name": "アズワン",
+    "sector": "卸売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8001",
+    "name": "伊藤忠商事",
+    "sector": "卸売業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "8002",
+    "name": "丸紅",
+    "sector": "卸売業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "8012",
+    "name": "長瀬産業",
+    "sector": "卸売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8015",
+    "name": "豊田通商",
+    "sector": "卸売業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "8020",
+    "name": "兼松",
+    "sector": "卸売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8031",
+    "name": "三井物産",
+    "sector": "卸売業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "8053",
+    "name": "住友商事",
+    "sector": "卸売業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "8058",
+    "name": "三菱商事",
+    "sector": "卸売業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "8060",
+    "name": "キヤノンマーケティングジャパン",
+    "sector": "卸売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8088",
+    "name": "岩谷産業",
+    "sector": "卸売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8129",
+    "name": "東邦ホールディングス",
+    "sector": "卸売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8136",
+    "name": "サンリオ",
+    "sector": "卸売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8283",
+    "name": "PALTAC",
+    "sector": "卸売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9934",
+    "name": "因幡電機産業",
+    "sector": "卸売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9962",
+    "name": "ミスミグループ本社",
+    "sector": "卸売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9987",
+    "name": "スズケン",
+    "sector": "卸売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "2670",
+    "name": "エービーシー・マート",
+    "sector": "小売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "3048",
+    "name": "ビックカメラ",
+    "sector": "小売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "3064",
+    "name": "MonotaRO",
+    "sector": "小売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "3086",
+    "name": "J.フロント リテイリング",
+    "sector": "小売業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "3088",
+    "name": "マツキヨココカラ&カンパニー",
+    "sector": "小売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "3092",
+    "name": "ZOZO",
+    "sector": "小売業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "3099",
+    "name": "三越伊勢丹ホールディングス",
+    "sector": "小売業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "3197",
+    "name": "すかいらーくホールディングス",
+    "sector": "小売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "3349",
+    "name": "コスモス薬品",
+    "sector": "小売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "3382",
+    "name": "セブン&アイ・ホールディングス",
+    "sector": "小売業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "3391",
+    "name": "ツルハホールディングス",
+    "sector": "小売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "3397",
+    "name": "トリドールホールディングス",
+    "sector": "小売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "3549",
+    "name": "クスリのアオキホールディングス",
+    "sector": "小売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "3563",
+    "name": "FOOD & LIFE COMPANIES",
+    "sector": "小売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "417A",
+    "name": "ブルーゾーンホールディングス",
+    "sector": "小売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "7453",
+    "name": "良品計画",
+    "sector": "小売業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7532",
+    "name": "パン・パシフィック・インターナショナルホールディングス",
+    "sector": "小売業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7550",
+    "name": "ゼンショーホールディングス",
+    "sector": "小売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "7616",
+    "name": "コロワイド",
+    "sector": "小売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "7649",
+    "name": "スギホールディングス",
+    "sector": "小売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8174",
+    "name": "日本瓦斯",
+    "sector": "小売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8227",
+    "name": "しまむら",
+    "sector": "小売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8233",
+    "name": "髙島屋",
+    "sector": "小売業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "8242",
+    "name": "エイチ・ツー・オー リテイリング",
+    "sector": "小売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8252",
+    "name": "丸井グループ",
+    "sector": "小売業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "8267",
+    "name": "イオン",
+    "sector": "小売業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "8282",
+    "name": "ケーズホールディングス",
+    "sector": "小売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9627",
+    "name": "アインホールディングス",
+    "sector": "小売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9831",
+    "name": "ヤマダホールディングス",
+    "sector": "小売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9843",
+    "name": "ニトリホールディングス",
+    "sector": "小売業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9861",
+    "name": "吉野家ホールディングス",
+    "sector": "小売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9983",
+    "name": "ファーストリテイリング",
+    "sector": "小売業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9989",
+    "name": "サンドラッグ",
+    "sector": "小売業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "5830",
+    "name": "いよぎんホールディングス",
+    "sector": "銀行業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "5831",
+    "name": "しずおかフィナンシャルグループ",
+    "sector": "銀行業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "5832",
+    "name": "ちゅうぎんフィナンシャルグループ",
+    "sector": "銀行業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "5838",
+    "name": "楽天銀行",
+    "sector": "銀行業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "5844",
+    "name": "京都フィナンシャルグループ",
+    "sector": "銀行業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "7167",
+    "name": "めぶきフィナンシャルグループ",
+    "sector": "銀行業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "7180",
+    "name": "九州フィナンシャルグループ",
+    "sector": "銀行業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "7182",
+    "name": "ゆうちょ銀行",
+    "sector": "銀行業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "7186",
+    "name": "横浜フィナンシャルグループ",
+    "sector": "銀行業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7189",
+    "name": "西日本フィナンシャルホールディングス",
+    "sector": "銀行業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "7337",
+    "name": "ひろぎんホールディングス",
+    "sector": "銀行業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8303",
+    "name": "SBI新生銀行",
+    "sector": "銀行業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8304",
+    "name": "あおぞら銀行",
+    "sector": "銀行業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "8306",
+    "name": "三菱UFJフィナンシャル・グループ",
+    "sector": "銀行業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "8308",
+    "name": "りそなホールディングス",
+    "sector": "銀行業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "8309",
+    "name": "三井住友トラスト・ホールディングス",
+    "sector": "銀行業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "8316",
+    "name": "三井住友フィナンシャルグループ",
+    "sector": "銀行業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "8331",
+    "name": "千葉銀行",
+    "sector": "銀行業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "8334",
+    "name": "群馬銀行",
+    "sector": "銀行業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8341",
+    "name": "七十七銀行",
+    "sector": "銀行業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8354",
+    "name": "ふくおかフィナンシャルグループ",
+    "sector": "銀行業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "8359",
+    "name": "八十二長野銀行",
+    "sector": "銀行業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8377",
+    "name": "ほくほくフィナンシャルグループ",
+    "sector": "銀行業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8410",
+    "name": "セブン銀行",
+    "sector": "銀行業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8411",
+    "name": "みずほフィナンシャルグループ",
+    "sector": "銀行業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "8418",
+    "name": "山口フィナンシャルグループ",
+    "sector": "銀行業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8473",
+    "name": "SBIホールディングス",
+    "sector": "証券、商品先物取引業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8595",
+    "name": "ジャフコ グループ",
+    "sector": "証券、商品先物取引業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8601",
+    "name": "大和証券グループ本社",
+    "sector": "証券、商品先物取引業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "8604",
+    "name": "野村ホールディングス",
+    "sector": "証券、商品先物取引業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7181",
+    "name": "かんぽ生命保険",
+    "sector": "保険業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8630",
+    "name": "SOMPOホールディングス",
+    "sector": "保険業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "8725",
+    "name": "MS&ADインシュアランスグループホールディングス",
+    "sector": "保険業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "8729",
+    "name": "ソニーフィナンシャルグループ",
+    "sector": "保険業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8750",
+    "name": "第一ライフグループ",
+    "sector": "保険業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "8766",
+    "name": "東京海上ホールディングス",
+    "sector": "保険業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "8795",
+    "name": "T&Dホールディングス",
+    "sector": "保険業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "7164",
+    "name": "全国保証",
+    "sector": "その他金融業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8253",
+    "name": "クレディセゾン",
+    "sector": "その他金融業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "8424",
+    "name": "芙蓉総合リース",
+    "sector": "その他金融業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8439",
+    "name": "東京センチュリー",
+    "sector": "その他金融業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8570",
+    "name": "イオンフィナンシャルサービス",
+    "sector": "その他金融業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8572",
+    "name": "アコム",
+    "sector": "その他金融業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8591",
+    "name": "オリックス",
+    "sector": "その他金融業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "8593",
+    "name": "三菱HCキャピタル",
+    "sector": "その他金融業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8697",
+    "name": "日本取引所グループ",
+    "sector": "その他金融業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "1878",
+    "name": "大東建託",
+    "sector": "不動産業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "3003",
+    "name": "ヒューリック",
+    "sector": "不動産業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "3231",
+    "name": "野村不動産ホールディングス",
+    "sector": "不動産業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "3288",
+    "name": "オープンハウスグループ",
+    "sector": "不動産業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "3289",
+    "name": "東急不動産ホールディングス",
+    "sector": "不動産業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "3291",
+    "name": "飯田グループホールディングス",
+    "sector": "不動産業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4666",
+    "name": "パーク24",
+    "sector": "不動産業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8801",
+    "name": "三井不動産",
+    "sector": "不動産業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "8802",
+    "name": "三菱地所",
+    "sector": "不動産業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "8804",
+    "name": "東京建物",
+    "sector": "不動産業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "8830",
+    "name": "住友不動産",
+    "sector": "不動産業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9706",
+    "name": "日本空港ビルデング",
+    "sector": "不動産業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "2127",
+    "name": "日本M&Aセンターホールディングス",
+    "sector": "サービス業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "2181",
+    "name": "パーソルホールディングス",
+    "sector": "サービス業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "2331",
+    "name": "ALSOK",
+    "sector": "サービス業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "2371",
+    "name": "カカクコム",
+    "sector": "サービス業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "2413",
+    "name": "エムスリー",
+    "sector": "サービス業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "2433",
+    "name": "博報堂DYホールディングス",
+    "sector": "サービス業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4324",
+    "name": "電通グループ",
+    "sector": "サービス業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4544",
+    "name": "H.U.グループホールディングス",
+    "sector": "サービス業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4661",
+    "name": "オリエンタルランド",
+    "sector": "サービス業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4665",
+    "name": "ダスキン",
+    "sector": "サービス業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4680",
+    "name": "ラウンドワン",
+    "sector": "サービス業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4681",
+    "name": "リゾートトラスト",
+    "sector": "サービス業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4732",
+    "name": "ユー・エス・エス",
+    "sector": "サービス業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "4751",
+    "name": "サイバーエージェント",
+    "sector": "サービス業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "4755",
+    "name": "楽天",
+    "sector": "サービス業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6098",
+    "name": "リクルートホールディングス",
+    "sector": "サービス業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6178",
+    "name": "日本郵政",
+    "sector": "サービス業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6532",
+    "name": "ベイカレント",
+    "sector": "サービス業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "6544",
+    "name": "ジャパンエレベーターサービスホールディングス",
+    "sector": "サービス業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "8876",
+    "name": "リログループ",
+    "sector": "サービス業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9616",
+    "name": "共立メンテナンス",
+    "sector": "サービス業",
+    "n225": false,
+    "topix500": true
+  },
+  {
+    "code": "9735",
+    "name": "セコム",
+    "sector": "サービス業",
+    "n225": true,
+    "topix500": true
+  },
+  {
+    "code": "9744",
+    "name": "メイテックグループホールディングス",
+    "sector": "サービス業",
+    "n225": false,
+    "topix500": true
+  }
+]
