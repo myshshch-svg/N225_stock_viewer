@@ -20,6 +20,9 @@ export interface Fundamentals {
   targetMeanPrice: number | null;
   recommendationKey: string | null;
   numberOfAnalysts: number | null;
+  currentRatio: number | null;
+  roe: number | null;
+  roa: number | null;
 }
 
 const RECOMMENDATION_LABELS: Record<string, string> = {
@@ -162,11 +165,17 @@ export default function StockCard({ stock, days, showMa, showStop, signal, earni
           損切り目安 {formatPrice(stop.stop)} ({stop.pct.toFixed(1)}%)
         </div>
       )}
-      {fundamentals && (fundamentals.per != null || fundamentals.pbr != null || fundamentals.dividendYield != null) && (
+      {fundamentals &&
+        (fundamentals.per != null ||
+          fundamentals.pbr != null ||
+          fundamentals.dividendYield != null ||
+          fundamentals.roe != null ||
+          fundamentals.roa != null ||
+          fundamentals.currentRatio != null) && (
         <div
           className="fundamentals-info"
           style={{ color: FUNDAMENTALS_COLOR }}
-          title="PER・PBR・配当利回り（実績ベース）。（）内は同業種平均"
+          title="PER・PBR・配当利回り・ROE・ROA・流動比率（実績ベース）。PER/PBRの（）内は同業種平均"
         >
           {fundamentals.per != null && (
             <span>
@@ -181,6 +190,9 @@ export default function StockCard({ stock, days, showMa, showStop, signal, earni
             </span>
           )}
           {fundamentals.dividendYield != null && <span>利回り{fundamentals.dividendYield.toFixed(2)}%</span>}
+          {fundamentals.roe != null && <span>ROE {fundamentals.roe.toFixed(1)}%</span>}
+          {fundamentals.roa != null && <span>ROA {fundamentals.roa.toFixed(1)}%</span>}
+          {fundamentals.currentRatio != null && <span>流動比率 {fundamentals.currentRatio.toFixed(2)}</span>}
         </div>
       )}
       {fundamentals?.targetMeanPrice != null && (

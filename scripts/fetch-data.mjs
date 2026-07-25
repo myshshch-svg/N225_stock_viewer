@@ -111,6 +111,9 @@ async function fetchQuoteSummary(symbol, auth) {
     targetMeanPrice: fd.targetMeanPrice?.raw ?? null,
     recommendationKey: fd.recommendationKey && fd.recommendationKey !== "none" ? fd.recommendationKey : null,
     numberOfAnalysts: fd.numberOfAnalystOpinions?.raw ?? null,
+    currentRatio: fd.currentRatio?.raw ?? null,
+    roe: fd.returnOnEquity?.raw != null ? fd.returnOnEquity.raw * 100 : null,
+    roa: fd.returnOnAssets?.raw != null ? fd.returnOnAssets.raw * 100 : null,
   };
 
   return { earnings, fundamentals };
