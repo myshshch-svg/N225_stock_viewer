@@ -128,19 +128,19 @@ export default function App() {
   return (
     <div className="app">
       <header className="header">
-        <h1>日経225 ミニチャート一覧</h1>
+        <h1>{indexFilter === "n225" ? "日経225" : "TOPIX500"} ミニチャート一覧</h1>
+        <div className="index-switch">
+          {INDEX_FILTERS.map((f) => (
+            <button
+              key={f.value}
+              className={f.value === indexFilter ? "active" : ""}
+              onClick={() => setIndexFilter(f.value)}
+            >
+              {f.label}
+            </button>
+          ))}
+        </div>
         <div className="toolbar">
-          <div className="periods">
-            {INDEX_FILTERS.map((f) => (
-              <button
-                key={f.value}
-                className={f.value === indexFilter ? "active" : ""}
-                onClick={() => setIndexFilter(f.value)}
-              >
-                {f.label}
-              </button>
-            ))}
-          </div>
           <div className="periods">
             {PERIODS.map((p) => (
               <button

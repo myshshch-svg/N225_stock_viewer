@@ -10,6 +10,30 @@
   margin: 10px 0;
 }
 
+.index-switch {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.index-switch button {
+  padding: 6px 22px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--muted);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.index-switch button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
 .toolbar {
   display: flex;
   flex-wrap: wrap;
